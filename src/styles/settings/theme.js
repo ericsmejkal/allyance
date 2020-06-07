@@ -21,17 +21,10 @@ export const Theme = {
     light: 'normal',
     bold: 'bold',
     black: '900',
-  }
+  },
 }
 
-const breakpoints = [
-  { xs: Xs },
-  { sm: Sm },
-  { md: Md },
-  { lg: Lg },
-  { xl: Xl },
-  { xxl: Xxl },
-]
+const breakpoints = [{ xs: Xs }, { sm: Sm }, { md: Md }, { lg: Lg }, { xl: Xl }, { xxl: Xxl }]
 
 export const Mq = breakpoints.reduce((acc, breakpoint) => {
   const entry = Object.entries(breakpoint)[0]

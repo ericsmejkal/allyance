@@ -2,12 +2,12 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/emotion'
 
-import { Button, AccentButton } from '../atoms/button'
-import { Input } from '../atoms/input'
-import { Paragraph, H2, H4 } from '../atoms/text'
-import { Container } from '../atoms/container'
-import { EmailSignup } from '../molecules/email-signup'
-import { SignupSection } from '../organisms/signup-section'
+import { Button, AccentButton } from '../src/atoms/button'
+import { Input } from '../src/atoms/input'
+import { Paragraph, H2, H4 } from '../src/atoms/text'
+import { Container } from '../src/atoms/container'
+import { EmailSignup } from '../src/molecules/email-signup'
+import { SignupSection } from '../src/organisms/signup-section'
 
 const AtomicPageSection = styled.main`
   margin-top: 5%;
@@ -29,13 +29,10 @@ export function AtomicPage(props) {
         <Container>
           <H2>OneForce</H2>
           <AtomicPageParagraph largeText>
-            This "Page" illustrates how elements breakdown in the Atomic system.
-            Atoms make up molecules, molecules make up organisms, and organisms
-            are used on pages and templates.{' '}
-            <a href="http://bradfrost.com/blog/post/atomic-web-design/">
-              Click here
-            </a>{' '}
-            to learn more about Atomic design.
+            This "Page" illustrates how elements breakdown in the Atomic system. Atoms make up
+            molecules, molecules make up organisms, and organisms are used on pages and templates.{' '}
+            <a href="http://bradfrost.com/blog/post/atomic-web-design/">Click here</a> to learn more
+            about Atomic design.
           </AtomicPageParagraph>
         </Container>
       </AtomicPageSection>
@@ -68,10 +65,7 @@ export function AtomicPage(props) {
           <Flex>
             <Box>
               <H4>Email signup</H4>
-              <EmailSignup
-                placeholder={'molecule@gmail.com'}
-                title={'Molecule'}
-              />
+              <EmailSignup placeholder={'molecule@gmail.com'} title={'Molecule'} />
             </Box>
           </Flex>
         </Container>

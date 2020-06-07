@@ -28,11 +28,10 @@ const BaseInput = styled.input`
     color: #fff;
   }
 
-
   &:hover,
   &:focus,
   &:active {
-    background-color: ${props => darken(0.1, props.theme.colors.darkGrey)};
+    background-color: ${(props) => darken(0.1, props.theme.colors.darkGrey)};
   }
 `
 
