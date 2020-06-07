@@ -19,6 +19,9 @@ const FooterContainer = styled.div`
     a {
       color: #fff;
       text-decoration: none;
+      @media screen and (max-width: 1000px) {
+        display: none;
+      }
     }
     &:hover {
       opacity: 0.8;
