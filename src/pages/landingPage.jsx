@@ -89,7 +89,8 @@ export function LandingPage(props) {
                   'excessive force.',
                   'white supremacy.',
                   'social injustice.',
-                  'biggotry & hate',
+                  'biggotry & hate.',
+                  'sexual harassment.',
                 ]}
                 cursor={false}
               />
