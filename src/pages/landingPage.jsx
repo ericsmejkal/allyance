@@ -20,7 +20,7 @@ const AtomicPageContainer = styled.main`
     min-height: 190px;
 
     @media screen and (max-width: 1000px) {
-      min-height: 150px;
+      min-height: 145px;
     }
   }
   H3 {
@@ -33,7 +33,7 @@ const CustomOverlay = styled.div`
   height: 100vh;
   width: 100%;
   position: absolute;
-  opacity: 0.93;
+  opacity: 0.9;
   z-index: 2;
   top: 0;
   left: 0;

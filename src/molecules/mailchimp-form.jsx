@@ -20,12 +20,12 @@ const CustomForm = styled.div`
     font-size: 1.2rem;
     line-height: 1.5;
     border-radius: 0;
-    color: #fff;
+    color: ${(props) => props.theme.colors.white};
     transition: background-color 0.15s ease-in-out;
     background: linear-gradient(360deg, #353535 0%, rgba(83, 83, 83, 0) 100%);
     background-color: linear-gradient(360deg, #353535 0%, rgba(83, 83, 83, 0) 100%);
     background-clip: padding-box;
-    border: 4px solid #fff;
+    border: 4px solid ${(props) => props.theme.colors.white};
     width: 70%;
     outline: none;
 
@@ -36,7 +36,7 @@ const CustomForm = styled.div`
       border-bottom-right-radius: 0;
     }
     &::placeholder {
-      color: #fff;
+      color: ${(props) => props.theme.colors.white};
     }
     &:hover,
     &:focus,
@@ -51,15 +51,15 @@ const CustomForm = styled.div`
     font-size: 1.2rem;
     line-height: 1.5;
     border-radius: 0;
-    color: #fff;
+    color: ${(props) => props.theme.colors.white};
     transition: background-color 0.15s ease-in-out;
     background: linear-gradient(360deg, #353535 0%, rgba(83, 83, 83, 0) 100%);
     background-color: linear-gradient(360deg, #353535 0%, rgba(83, 83, 83, 0) 100%);
     background-clip: padding-box;
-    border-top: 4px solid #fff;
-    border-right: 4px solid #fff;
-    border-bottom: 4px solid #fff;
-    border-left: 0px solid #fff;
+    border-top: 4px solid ${(props) => props.theme.colors.white};
+    border-right: 4px solid ${(props) => props.theme.colors.white};
+    border-bottom: 4px solid ${(props) => props.theme.colors.white};
+    border-left: 0px solid ${(props) => props.theme.colors.white};
     outline: none;
     cursor: pointer;
 
@@ -68,7 +68,7 @@ const CustomForm = styled.div`
     &:active {
       color: ${(props) => props.theme.colors.white};
       background-color: ${(props) => darken(0.1, props.theme.colors.darkGrey)};
-      border-color: #fff;
+      border-color: ${(props) => props.theme.colors.white};
     }
   }
 

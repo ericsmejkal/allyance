@@ -23,6 +23,9 @@ const FooterContainer = styled.div`
     &:hover {
       opacity: 0.8;
     }
+    @media screen and (max-width: 1000px) {
+      display: none;
+    }
   }
 `
 
