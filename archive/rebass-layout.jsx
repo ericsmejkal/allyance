@@ -2,7 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/emotion'
 
-import { Paragraph, H1, H2 } from '../atoms/text'
+import { Paragraph, H1, H2 } from '../src/atoms/text'
 
 const HeroSection = styled.section`
   height: 10rem;

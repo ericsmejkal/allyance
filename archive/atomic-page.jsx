@@ -2,12 +2,12 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/emotion'
 
-import { Button, AccentButton } from '../atoms/button'
-import { Input } from '../atoms/input'
-import { Paragraph, H2, H4 } from '../atoms/text'
-import { Container } from '../atoms/container'
-import { EmailSignup } from '../molecules/email-signup'
-import { SignupSection } from '../organisms/signup-section'
+import { Button, AccentButton } from '../src/atoms/button'
+import { Input } from '../src/atoms/input'
+import { Paragraph, H2, H4 } from '../src/atoms/text'
+import { Container } from '../src/atoms/container'
+import { EmailSignup } from '../src/molecules/email-signup'
+import { SignupSection } from '../src/organisms/signup-section'
 
 const AtomicPageSection = styled.main`
   margin-top: 5%;
