@@ -71,10 +71,9 @@ export function RebassLayout(props) {
           <Box width={[1, 1, 1 / 2]}>
             <H2>Text with no background</H2>
             <Paragraph>
-              Michael Bloomberg is expected to pull out of the Democratic
-              presidential race after failing to win in any states on Super
-              Tuesday despite spending more than half a billion dollars of his
-              own money on campaign advertising.
+              Michael Bloomberg is expected to pull out of the Democratic presidential race after
+              failing to win in any states on Super Tuesday despite spending more than half a
+              billion dollars of his own money on campaign advertising.
             </Paragraph>
           </Box>
         </Flex>

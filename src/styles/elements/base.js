@@ -16,11 +16,14 @@ export const Base = css`
     -moz-osx-font-smoothing: grayscale;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3 {
     font-weight: ${Theme.fontweight.light};
     font-family: 'Circular Std Book';
     margin-bottom: 0.5rem;
-  },
+  }
+  ,
   h4,
   h5 {
     margin-bottom: 0.5rem;

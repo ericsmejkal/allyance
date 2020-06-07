@@ -29,13 +29,10 @@ export function AtomicPage(props) {
         <Container>
           <H2>OneForce</H2>
           <AtomicPageParagraph largeText>
-            This "Page" illustrates how elements breakdown in the Atomic system.
-            Atoms make up molecules, molecules make up organisms, and organisms
-            are used on pages and templates.{' '}
-            <a href="http://bradfrost.com/blog/post/atomic-web-design/">
-              Click here
-            </a>{' '}
-            to learn more about Atomic design.
+            This "Page" illustrates how elements breakdown in the Atomic system. Atoms make up
+            molecules, molecules make up organisms, and organisms are used on pages and templates.{' '}
+            <a href="http://bradfrost.com/blog/post/atomic-web-design/">Click here</a> to learn more
+            about Atomic design.
           </AtomicPageParagraph>
         </Container>
       </AtomicPageSection>
@@ -68,10 +65,7 @@ export function AtomicPage(props) {
           <Flex>
             <Box>
               <H4>Email signup</H4>
-              <EmailSignup
-                placeholder={'molecule@gmail.com'}
-                title={'Molecule'}
-              />
+              <EmailSignup placeholder={'molecule@gmail.com'} title={'Molecule'} />
             </Box>
           </Flex>
         </Container>
