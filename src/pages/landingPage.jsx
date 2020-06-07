@@ -5,7 +5,7 @@ import backgroundImage from '../assets/images/allyance__hero--landingpage.jpg'
 import metaImage from '../assets/images/allyance__meta-image--landingpage.jpg'
 import { Paragraph, H1, H3 } from '../atoms/text'
 import { MailchimpForm } from '../molecules/mailchimp-form'
-import ReactRotatingText from 'react-rotating-text'
+import { TypeaheadText } from '../molecules/typeahead-text'
 import MetaTags from 'react-meta-tags'
 
 const AtomicPageContainer = styled.main`
@@ -83,21 +83,11 @@ export function LandingPage(props) {
               <br />
               accountable for acts of
               <br />
-              <ReactRotatingText
-                items={[
-                  'police brutality.',
-                  'excessive force.',
-                  'white supremacy.',
-                  'social injustice.',
-                  'biggotry & hate',
-                ]}
-                cursor={false}
-              />
+              <TypeaheadText />
             </H1>
             <AtomicPageParagraph largeText>
-              If you would like to join the fight, sign up below and help in our quest to develop a
-              platform to hold our police force accountable for their actions, in an effort to
-              influence the change we need and deserve.
+              We need your help to develop this platform - to hold the system accountable for the
+              world's ongoing injustices. If you would like to join the fight, sign up below.
             </AtomicPageParagraph>
             <MailchimpForm />
           </Box>
