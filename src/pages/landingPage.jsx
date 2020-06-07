@@ -63,7 +63,7 @@ export function LandingPage(props) {
         <title>allyance – strength in numbers.</title>
         <meta
           name="description"
-          content="If you would like to join the fight, sign up below and help in our quest to develop a platform to hold our police force accountable for their actions, in an effort to influence the needed change we deserve."
+          content="We need your help to develop this platform - to hold the system accountable for the world's ongoing injustices. If you would like to join the fight, sign up below."
         />
         <meta property="og:title" content="allyance – strength in numbers." />
         <meta property="og:image" content={metaImage} />
