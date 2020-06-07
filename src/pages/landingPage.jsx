@@ -2,14 +2,21 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/emotion'
 import { darken } from 'polished'
+import backgroundImage from '../assets/images/allyance__hero--landingpage.jpg'
 
 import { Paragraph, H1, H3 } from '../atoms/text'
 import Mailchimp from 'react-mailchimp-form'
 import ReactRotatingText from 'react-rotating-text'
 
-const AtomicPageContainer = styled.main`
+const CustomOverlay = styled.div`
   background: linear-gradient(180deg, #030C07 0%, #2D2D2D 100%);
   height: 100vh;
+  width: 100%;
+  display: block;
+`
+
+const AtomicPageContainer = styled.main`
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -26,6 +33,7 @@ const AtomicPageContainer = styled.main`
     color: #959595;
   }
 `
+
 
 const AtomicPageParagraph = styled(Paragraph)`
   color: #fff;
@@ -119,50 +127,52 @@ const CustomForm = styled.div`
 //   width: 100%;
 // `
 
-export function Home(props) {
+export function LandingPage(props) {
   return (
     <main className="atomic-page">
-      <AtomicPageContainer>
-        <Flex width={1} pl={[4, 4, 6, 6]} pr={[4, 4, 6, 6]}>
-          <Box width={1}>
-          <H3>Strength in numbers.</H3>
-          <H1>Holding our justice system
-            <br />
-            accountable for acts of
-            <br />
-            <ReactRotatingText items={['police brutality.', 'excessive force.', 'white supremacy.', 'social injustice.']} cursor={false} />
-            </H1>
-          <AtomicPageParagraph largeText>
-          If you would like to join the fight, sign up below and help in our quest to develop a platform to hold our police force accountable for their actions, in an effort to influence the needed change we deserve.
-          </AtomicPageParagraph>
-          {/* <EmailSignup placeholder="Enter Your Email" title="Join"/> */}
-          <CustomForm>
-          <Mailchimp
-            action='https://allyance.us10.list-manage.com/subscribe/post?u=6d4b2e29e3c513997fcad9b2a&amp;id=9b25ce30d7'
-            fields={[
-              {
-                name: 'EMAIL',
-                placeholder: 'Enter Your Email',
-                type: 'email',
-                required: true
+      <CustomOverlay>
+        <AtomicPageContainer style={{backgroundImage:`url(${backgroundImage})`}}>
+          <Flex width={1} pl={[4, 4, 6, 6]} pr={[4, 4, 6, 6]}>
+            <Box width={1}>
+            <H3>Strength in numbers.</H3>
+            <H1>Holding our justice system
+              <br />
+              accountable for acts of
+              <br />
+              <ReactRotatingText items={['police brutality.', 'excessive force.', 'white supremacy.', 'social injustice.']} cursor={false} />
+              </H1>
+            <AtomicPageParagraph largeText>
+            If you would like to join the fight, sign up below and help in our quest to develop a platform to hold our police force accountable for their actions, in an effort to influence the needed change we deserve.
+            </AtomicPageParagraph>
+            {/* <EmailSignup placeholder="Enter Your Email" title="Join"/> */}
+            <CustomForm>
+            <Mailchimp
+              action='https://allyance.us10.list-manage.com/subscribe/post?u=6d4b2e29e3c513997fcad9b2a&amp;id=9b25ce30d7'
+              fields={[
+                {
+                  name: 'EMAIL',
+                  placeholder: 'Enter Your Email',
+                  type: 'email',
+                  required: true
+                }
+              ]}
+              messages = {
+                {
+                  sending: "Sending...",
+                  success: "Thank you for subscribing!",
+                  error: "An unexpected internal error has occurred.",
+                  empty: "You must write an e-mail.",
+                  duplicate: "Too many subscribe attempts for this email address",
+                  button: "Join"
+                }
               }
-            ]}
-            messages = {
-              {
-                sending: "Sending...",
-                success: "Thank you for subscribing!",
-                error: "An unexpected internal error has occurred.",
-                empty: "You must write an e-mail.",
-                duplicate: "Too many subscribe attempts for this email address",
-                button: "Join"
-              }
-            }
-            className='mailchimp__email-form'
-          />
-          </CustomForm>
-          </Box>
-        </Flex>
-      </AtomicPageContainer>
+              className='mailchimp__email-form'
+            />
+            </CustomForm>
+            </Box>
+          </Flex>
+        </AtomicPageContainer>
+      </CustomOverlay>
     </main>
   )
 }
