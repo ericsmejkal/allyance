@@ -1,0 +1,37 @@
+{
+  "name": "style-guidelines-css-in-js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@rebass/emotion": "^3.1.0",
+    "emotion-theming": "^10.0.27",
+    "framer-motion": "^1.11.0",
+    "minireset.css": "^0.0.4",
+    "modern-normalize": "^0.5.0",
+    "polished": "^3.2.0",
+    "prettier": "^2.0.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-feather": "^2.0.8",
+    "react-mailchimp-form": "^1.0.2",
+    "react-rotating-text": "^1.4.1",
+    "react-scripts": "^3.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
