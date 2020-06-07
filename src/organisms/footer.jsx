@@ -12,6 +12,9 @@ const FooterContainer = styled.div`
   width: 100%;
   justify-content: space-between;
   z-index: 10;
+  @media screen and (max-width: 1000px) {
+    display: none;
+  }
 
   H5 {
     color: #fff;
@@ -19,9 +22,6 @@ const FooterContainer = styled.div`
     a {
       color: #fff;
       text-decoration: none;
-      @media screen and (max-width: 1000px) {
-        display: none;
-      }
     }
     &:hover {
       opacity: 0.8;
