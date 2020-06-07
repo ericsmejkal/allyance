@@ -50,7 +50,7 @@ const CustomBackground = styled.div`
 
 const AtomicPageParagraph = styled(Paragraph)`
   color: #fff;
-  max-width: 600px;
+  max-width: 510px;
   margin: 20px auto 60px 0;
   text-align: left;
   z-index: 3;
@@ -95,9 +95,8 @@ export function LandingPage(props) {
               />
             </H1>
             <AtomicPageParagraph largeText>
-              If you would like to join the fight, sign up below and help in our quest to develop a
-              platform to hold our police force accountable for their actions, in an effort to
-              influence the change we need and deserve.
+              We need your help to develop this platform - to hold the system accountable for the
+              world's ongoing injustices. If you would like to join the fight, sign up below.
             </AtomicPageParagraph>
             <MailchimpForm />
           </Box>

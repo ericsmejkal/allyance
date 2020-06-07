@@ -49,7 +49,7 @@ export function Navigation(props) {
 
         <SocialBox width={[1, 1, 1 / 2, 2 / 5]}>
           <IconBox>
-            <Link href="https://twitter.com/ourallyance" target="_blank">
+            <Link href="https://twitter.com/our.allyance" target="_blank">
               <Twitter color="white" />
             </Link>
           </IconBox>
