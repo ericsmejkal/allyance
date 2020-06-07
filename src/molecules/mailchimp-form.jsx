@@ -6,7 +6,7 @@ import Mailchimp from 'react-mailchimp-form'
 
 const CustomForm = styled.div`
   display: flex;
-  max-width: 600px;
+  max-width: 500px;
 
   form {
     display: inline-block;
@@ -26,7 +26,7 @@ const CustomForm = styled.div`
     background-color: linear-gradient(360deg, #353535 0%, rgba(83, 83, 83, 0) 100%);
     background-clip: padding-box;
     border: 4px solid ${(props) => props.theme.colors.white};
-    width: 70%;
+    width: 80%;
     outline: none;
 
     &.input--email {
@@ -62,6 +62,7 @@ const CustomForm = styled.div`
     border-left: 0px solid ${(props) => props.theme.colors.white};
     outline: none;
     cursor: pointer;
+    width: 20%;
 
     &:hover,
     &:focus,

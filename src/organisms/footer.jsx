@@ -23,16 +23,17 @@ const FooterContainer = styled.div`
     &:hover {
       opacity: 0.8;
     }
-    @media screen and (max-width: 1000px) {
-      display: none;
-    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    padding: 20px 0;
   }
 `
 
 export function Footer(props) {
   return (
     <FooterContainer>
-      <Flex flexWrap="wrap" pl={[4, 4, 6, 6]} pr={[4, 4, 6, 6]}>
+      <Flex flexWrap={['nowrap', 'nowrap', 'wrap', 'wrap']} pl={[4, 4, 6, 6]} pr={[4, 4, 6, 6]}>
         <Box width={[1, 1, 1 / 2, 3 / 5]}>
           <H5>© 2020 allyance – All Rights Reserved</H5>
         </Box>

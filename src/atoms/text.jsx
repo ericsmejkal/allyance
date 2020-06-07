@@ -28,7 +28,7 @@ export const Paragraph = styled.p`
 `
 
 export const H1 = styled.h1`
-  font-size: 1.75rem;
+  font-size: 1.7rem;
   color: ${(props) => (props.whiteText ? props.theme.colors.white : props.theme.colors.black)};
 
   ${Mq.md} {
@@ -37,7 +37,7 @@ export const H1 = styled.h1`
 `
 
 export const H2 = styled.h2`
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: ${(props) => (props.whiteText ? props.theme.colors.white : props.theme.colors.black)};
 
   ${Mq.md} {
@@ -46,7 +46,7 @@ export const H2 = styled.h2`
 `
 
 export const H3 = styled.h3`
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: ${(props) => (props.whiteText ? props.theme.colors.white : props.theme.colors.black)};
 
   ${Mq.md} {

@@ -2,10 +2,11 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/emotion'
 import backgroundImage from '../assets/images/allyance__hero--landingpage.jpg'
-
+import metaImage from '../assets/images/allyance__meta-image--landingpage.jpg'
 import { Paragraph, H1, H3 } from '../atoms/text'
 import { MailchimpForm } from '../molecules/mailchimp-form'
 import ReactRotatingText from 'react-rotating-text'
+import MetaTags from 'react-meta-tags'
 
 const AtomicPageContainer = styled.main`
   height: auto;
@@ -20,7 +21,7 @@ const AtomicPageContainer = styled.main`
     min-height: 190px;
 
     @media screen and (max-width: 1000px) {
-      min-height: 145px;
+      min-height: 130px;
     }
   }
   H3 {
@@ -51,7 +52,7 @@ const CustomBackground = styled.div`
 const AtomicPageParagraph = styled(Paragraph)`
   color: #fff;
   max-width: 600px;
-  margin: 40px auto 60px 0;
+  margin: 20px auto 60px 0;
   text-align: left;
   z-index: 3;
 `
@@ -59,6 +60,15 @@ const AtomicPageParagraph = styled(Paragraph)`
 export function LandingPage(props) {
   return (
     <main className="atomic-page">
+      <MetaTags>
+        <title>allyance – strength in numbers.</title>
+        <meta
+          name="description"
+          content="If you would like to join the fight, sign up below and help in our quest to develop a platform to hold our police force accountable for their actions, in an effort to influence the needed change we deserve."
+        />
+        <meta property="og:title" content="allyance – strength in numbers." />
+        <meta property="og:image" content={metaImage} />
+      </MetaTags>
       <AtomicPageContainer>
         <Flex
           height="100vh"
@@ -80,6 +90,7 @@ export function LandingPage(props) {
                   'excessive force.',
                   'white supremacy.',
                   'social injustice.',
+                  'biggotry & hate',
                 ]}
                 cursor={false}
               />
@@ -87,14 +98,20 @@ export function LandingPage(props) {
             <AtomicPageParagraph largeText>
               If you would like to join the fight, sign up below and help in our quest to develop a
               platform to hold our police force accountable for their actions, in an effort to
-              influence the needed change we deserve.
+              influence the change we need and deserve.
             </AtomicPageParagraph>
             <MailchimpForm />
           </Box>
         </Flex>
 
         <CustomOverlay />
-        <CustomBackground style={{ backgroundImage: `url(${backgroundImage})` }} />
+        <CustomBackground
+          style={{
+            backgroundImage: `url(${backgroundImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
       </AtomicPageContainer>
     </main>
   )
