@@ -63,7 +63,7 @@ export function LandingPage(props) {
         <title>allyance – strength in numbers.</title>
         <meta
           name="description"
-          content="We need your help to develop this platform - to hold the system accountable for the world's ongoing injustices. If you would like to join the fight, sign up below."
+          content="We need your help to develop this platform - to hold the system accountable for the world's ongoing injustices. If you would like to join the fight, sign up to see how you can help."
         />
         <meta property="og:title" content="allyance – strength in numbers." />
         <meta property="og:image" content={metaImage} />
@@ -96,8 +96,8 @@ export function LandingPage(props) {
               />
             </H1>
             <AtomicPageParagraph largeText>
-              We need your help to develop this platform - to hold the system accountable for the
-              world's ongoing injustices. If you would like to join the fight, sign up below.
+              {/* We need your help to develop this platform - to hold the system accountable for the
+              world's ongoing injustices. If you would like to join the fight, sign up below. */}
             </AtomicPageParagraph>
             <MailchimpForm />
           </Box>
