@@ -91,6 +91,7 @@ export function LandingPage(props) {
                   'social injustice.',
                   'bigotry & hate.',
                   'sexual harassment.',
+                  'corporate corruption.',
                 ]}
                 cursor={false}
               />
