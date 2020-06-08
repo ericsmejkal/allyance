@@ -51,7 +51,7 @@ const CustomBackground = styled.div`
 const AtomicPageParagraph = styled(Paragraph)`
   color: #fff;
   max-width: 510px;
-  margin: 25px auto 60px 0;
+  margin: 25px auto 50px 0;
   text-align: left;
   z-index: 3;
 `
