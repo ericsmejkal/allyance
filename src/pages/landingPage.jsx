@@ -97,8 +97,9 @@ export function LandingPage(props) {
               />
             </H1>
             <AtomicPageParagraph largeText>
-              We need your help to develop this platform - to hold the system accountable for the
-              world's ongoing injustices. If you would like to join the fight, sign up below.
+              We need your help to develop this platform - a space for the People to organize,
+              document, track, and report social injustice and legal negligience. If you would like
+              to join the fight, sign up below.
             </AtomicPageParagraph>
             <MailchimpForm />
           </Box>
