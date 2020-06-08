@@ -51,7 +51,7 @@ const CustomBackground = styled.div`
 const AtomicPageParagraph = styled(Paragraph)`
   color: #fff;
   max-width: 510px;
-  margin: 20px auto 60px 0;
+  margin: 20px auto 30px 0;
   text-align: left;
   z-index: 3;
 `
@@ -98,8 +98,10 @@ export function LandingPage(props) {
             </H1>
             <AtomicPageParagraph largeText>
               We need your help to develop this platform - a space for the People to organize,
-              document, track, and report social injustice and legal negligience. If you would like
-              to join the fight, sign up below.
+              document, track, and report social injustice and legal negligience.
+              <br />
+              <br />
+              If you would like to join the fight, sign up below.
             </AtomicPageParagraph>
             <MailchimpForm />
           </Box>
