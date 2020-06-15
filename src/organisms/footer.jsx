@@ -38,7 +38,10 @@ export function Footer(props) {
     <FooterContainer>
       <Flex flexWrap={['nowrap', 'nowrap', 'wrap', 'wrap']} pl={[4, 4, 6, 6]} pr={[4, 4, 6, 6]}>
         <Box width={[1, 1, 1 / 2, 3 / 5]}>
-          <H5>© 2020 allyance – All Rights Reserved</H5>
+          <H5>
+            © 2020 allyance – All Rights Reserved –{' '}
+            <a href="mailto:info@allyance.co">info@allyance.co</a>
+          </H5>
         </Box>
 
         <Box width={[1, 1, 1 / 2, 2 / 5]}>
