@@ -8,8 +8,6 @@ import { LandingPage } from "./pages/landingPage"
 import { Navigation } from "./organisms/navigation"
 import { Footer } from "./organisms/footer"
 
-console.log("staging")
-
 class App extends Component {
   render() {
     return (
