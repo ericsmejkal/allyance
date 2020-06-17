@@ -4,18 +4,14 @@ import { ThemeProvider } from 'emotion-theming'
 
 import { Theme } from './styles/settings/theme'
 import { GlobalStyles } from './styles/global'
-import { LandingPage } from './pages/landingPage'
-import { Navigation } from './organisms/navigation'
-import { Footer } from './organisms/footer'
+import Routes from './routes'
 
 class App extends Component {
   render() {
     return (
       <ThemeProvider theme={Theme}>
         <Global styles={GlobalStyles} />
-        <Navigation />
-        <LandingPage />
-        <Footer />
+        <Routes />
       </ThemeProvider>
     )
   }

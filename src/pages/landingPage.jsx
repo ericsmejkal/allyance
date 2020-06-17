@@ -55,8 +55,7 @@ const AtomicPageParagraph = styled(Paragraph)`
   text-align: left;
   z-index: 3;
 `
-
-export function LandingPage(props) {
+function LandingPage(props) {
   return (
     <main className="atomic-page">
       <MetaTags>
@@ -119,3 +118,5 @@ export function LandingPage(props) {
     </main>
   )
 }
+
+export default LandingPage
