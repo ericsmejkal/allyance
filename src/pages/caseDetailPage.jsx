@@ -18,6 +18,7 @@ const PageContainer = styled.div`
 const CaseDetailPage = () => {
   const { id } = useParams()
   const incident = incidents && incidents.find((incident) => parseInt(incident.id) === parseInt(id))
+
   return (
     <PageContainer>
       <h2>Case Detail Page</h2>
