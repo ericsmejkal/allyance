@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Flex, Link } from '@rebass/emotion'
+import { Flex, Link as ExternalLink } from '@rebass/emotion'
 import { Twitter, Instagram } from 'react-feather'
+import { Link } from 'react-router-dom'
 
 import { LightLogo } from '../atoms/logo'
 // import { H4 } from '../atoms/text'
@@ -44,19 +45,21 @@ export function Navigation(props) {
     <NavigationContainer>
       <Flex flexWrap="wrap" width={1} ml={[4, 4, 6, 6]} mr={[4, 4, 6, 6]}>
         <LogoBox width={[1, 1, 1 / 2, 3 / 5]}>
-          <LightLogo />
+          <Link to="/">
+            <LightLogo />
+          </Link>
         </LogoBox>
 
         <SocialBox width={[1, 1, 1 / 2, 2 / 5]}>
           <IconBox>
-            <Link href="https://twitter.com/ourallyance" target="_blank">
+            <ExternalLink href="https://twitter.com/ourallyance" target="_blank">
               <Twitter color="white" />
-            </Link>
+            </ExternalLink>
           </IconBox>
           <IconBox pl={4}>
-            <Link href="https://instagram.com/ourallyance" target="_blank">
+            <ExternalLink href="https://instagram.com/ourallyance" target="_blank">
               <Instagram color="white" />
-            </Link>
+            </ExternalLink>
           </IconBox>
         </SocialBox>
       </Flex>
