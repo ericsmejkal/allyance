@@ -4,7 +4,7 @@ import { Box, Flex } from '@rebass/emotion'
 import backgroundImage from '../assets/images/allyance__hero--landingpage.jpg'
 import metaImage from '../assets/images/allyance__meta-image--landingpage.jpg'
 import { Paragraph, H1, H3 } from '../atoms/text'
-import { MailchimpForm } from '../molecules/mailchimp-form'
+import { MailchimpForm } from '../molecules/mailchimpForm'
 import ReactRotatingText from 'react-rotating-text'
 import MetaTags from 'react-meta-tags'
 
