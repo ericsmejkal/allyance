@@ -6,18 +6,18 @@ import { Container } from '../atoms/container'
 import { Paragraph } from '../atoms/text'
 
 const MissionContainer = styled.div`
-  background: ${(props) => props.theme.colors.white};
-  padding: 7% 0;
-
+  max-width: 60%;
+  margin-top: -150px;
+  margin-bottom: 80px;
   p {
-    color: ${(props) => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.black};
   }
 `
 
 export function Mission(props) {
   return (
-    <MissionContainer>
-      <Container>
+    <Container>
+      <MissionContainer>
         <Flex flexWrap="wrap">
           <Box width={1}>
             <Paragraph>
@@ -28,7 +28,7 @@ export function Mission(props) {
             </Paragraph>
           </Box>
         </Flex>
-      </Container>
-    </MissionContainer>
+      </MissionContainer>
+    </Container>
   )
 }

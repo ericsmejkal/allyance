@@ -25,15 +25,16 @@ const BaseButton = styled.button`
 
 const BaseAccentButton = styled(BaseButton)`
   background-color: initial;
-  color: ${(props) => props.theme.colors.brandSecondary};
-  border-color: ${(props) => props.theme.colors.brandSecondary};
-  border-width: 2px;
+  color: ${(props) => props.theme.colors.White};
+  border-color: ${(props) => props.theme.colors.white};
+  border-width: 4px;
+  margin-top: 40px;
 
   &:hover,
   &:focus,
   &:active {
     color: ${(props) => props.theme.colors.white};
-    background-color: ${(props) => darken(0.1, props.theme.colors.darkGrey)};
+    background-color: transparent;
     border-color: #fff;
   }
 `

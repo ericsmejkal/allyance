@@ -4,6 +4,7 @@ import metaImage from '../assets/images/allyance__meta-image--landingpage.jpg'
 
 import { Mission } from '../molecules/mission'
 import { LargeHero } from '../organisms/largeHero'
+import { CaseFeed } from '../organisms/caseFeed'
 
 function HomePage(props) {
   return (
@@ -19,6 +20,7 @@ function HomePage(props) {
       </MetaTags>
       <LargeHero />
       <Mission />
+      <CaseFeed />
     </main>
   )
 }

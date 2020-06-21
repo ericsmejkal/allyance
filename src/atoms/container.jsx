@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { Box } from '@rebass/emotion'
 
-import { Mq } from '../styles/settings'
+// import { Mq } from '../styles/settings'
 
 export const Container = styled(Box)`
   width: 100%;

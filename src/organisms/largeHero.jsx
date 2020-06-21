@@ -29,7 +29,7 @@ const HeroContainer = styled.main`
 
 const CustomOverlay = styled.div`
   background: linear-gradient(180deg, #030c07 0%, #2d2d2d 100%);
-  height: 700px;
+  height: 800px;
   width: 100%;
   position: absolute;
   opacity: 0.975;
@@ -39,7 +39,7 @@ const CustomOverlay = styled.div`
 `
 
 const CustomBackground = styled.div`
-  height: 700px;
+  height: 800px;
   width: 100%;
   position: absolute;
   z-index: 1;
@@ -74,8 +74,8 @@ export function LargeHero(props) {
             </H1>
             <AccentButton title="Report A Case" />
           </Box>
-          <Box display="flex" marginTop={140}>
-            <Image src={heroImage} alt="allyance__hero-image" />
+          <Box display="flex" marginTop={240}>
+            <Image src={heroImage} alt="allyance__hero-image" width="100%" />
           </Box>
         </Flex>
       </Container>
