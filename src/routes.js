@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-import LandingPage from './pages/landingPage'
+import HomePage from './pages/homePage'
 import CaseFeedPage from './pages/caseFeedPage'
 import CaseDetailPage from './pages/caseDetailPage'
 
@@ -14,7 +14,7 @@ const Routes = () => {
       <Navigation />
       <Switch>
         <Route exact path="/">
-          <LandingPage />
+          <HomePage />
         </Route>
         <Route exact path="/cases">
           <CaseFeedPage />

@@ -9,5 +9,5 @@ export const Container = styled(Box)`
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
-  max-width: 1140px;
+  max-width: 1300px;
 `

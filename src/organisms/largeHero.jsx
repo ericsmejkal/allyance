@@ -1,25 +1,94 @@
 import React from 'react'
+import { Box, Flex, Image } from '@rebass/emotion'
+import backgroundImage from '../assets/images/allyance__hero--landingpage.jpg'
+import heroImage from '../assets/images/hero-phone.png'
 import styled from '@emotion/styled'
-import { Box, Flex } from '@rebass/emotion'
+import ReactRotatingText from 'react-rotating-text'
 
+import { AccentButton } from '../atoms/button'
 import { Container } from '../atoms/container'
-import { Paragraph, H1 } from '../atoms/text'
+import { H1, H3 } from '../atoms/text'
 
-const SignUpContainer = styled.div`
-  background: ${(props) => props.theme.colors.darkGray};
-  padding: 7% 0;
+const HeroContainer = styled.main`
+  height: 500px;
+  display: flex;
+  align-items: center;
+  z-index: 3;
+
+  H1 {
+    color: #fff;
+    min-height: 190px;
+
+    @media screen and (max-width: 1000px) {
+      min-height: 130px;
+    }
+  }
+  H3 {
+    color: #959595;
+  }
+`
+
+const CustomOverlay = styled.div`
+  background: linear-gradient(180deg, #030c07 0%, #2d2d2d 100%);
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  opacity: 0.975;
+  z-index: 2;
+  top: 0;
+  left: 0;
+`
+
+const CustomBackground = styled.div`
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
 `
 
 export function LargeHero(props) {
   return (
-    <SignUpContainer>
-      <Container>
-        <Flex flexWrap="wrap">
-          <Box width={[1, 1, 1 / 2, 3 / 5]} p={3}>
-            <H1>Hero Section</H1>
+    <HeroContainer>
+      <Container style={{ zIndex: '4' }}>
+        <Flex ealignItems="center">
+          <Box>
+            <H3>Strength in numbers.</H3>
+            <H1>
+              Holding our justice system
+              <br />
+              accountable for acts of
+              <br />
+              <ReactRotatingText
+                items={[
+                  'police brutality.',
+                  'excessive force.',
+                  'white supremacy.',
+                  'social injustice.',
+                  'bigotry & hate.',
+                  'sexual harassment.',
+                  'corporate corruption.',
+                ]}
+                cursor={false}
+              />
+            </H1>
+            <AccentButton title="Report A Case" />
+          </Box>
+          <Box>
+            <Image src={heroImage} alt="allyance__hero-image" />
           </Box>
         </Flex>
       </Container>
-    </SignUpContainer>
+
+      <CustomOverlay />
+      <CustomBackground
+        style={{
+          backgroundImage: `url(${backgroundImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
+    </HeroContainer>
   )
 }
