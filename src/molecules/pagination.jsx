@@ -11,7 +11,7 @@ const PaginationContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: auto;
-  padding-top: 60px;
+  padding: 40px 0;
 
   H4 {
     transition: 0.2s ease-in-out;

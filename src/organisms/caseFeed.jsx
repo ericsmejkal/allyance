@@ -1,16 +1,17 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { Link } from 'react-router-dom'
 import { Box, Flex } from '@rebass/emotion'
 
 import { SubContainer, Container, FullWidthContainer } from '../atoms/container'
 import { Sort } from '../atoms/sort'
 import { Filter } from '../atoms/filter'
+import { AccentButton } from '../atoms/button'
 import { Case } from '../molecules/case'
 import { Pagination } from '../molecules/pagination'
 
 const CaseFeedContainer = styled.div`
   background: ${(props) => props.theme.colors.darkGray};
-  padding: 0 0 6%;
 `
 
 const FeedControls = styled.div`
@@ -25,7 +26,7 @@ export function CaseFeed(props) {
   return (
     <CaseFeedContainer>
       {props.page === 'home' ? (
-        <Container>
+        <Container style={{ marginBottom: '-30px' }}>
           <FeedControls>
             <Sort />
             <Filter />
@@ -41,7 +42,7 @@ export function CaseFeed(props) {
               <Case />
             </Box>
           </Flex>
-          <Flex flexWrap="wrap" ml="-10px" mr="-10px" mt="20px">
+          <Flex flexWrap="wrap" ml="-10px" mr="-10px" mt="20px" justifyContent="center">
             <Box width={[1 / 3]} pl="10px" pr="10px">
               <Case />
             </Box>
@@ -51,8 +52,10 @@ export function CaseFeed(props) {
             <Box width={[1 / 3]} pl="10px" pr="10px">
               <Case />
             </Box>
+            <Link to="/browse-cases">
+              <AccentButton title="View All" variant="dark" />
+            </Link>
           </Flex>
-          <Pagination />
         </Container>
       ) : (
         <FullWidthContainer>
