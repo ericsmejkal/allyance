@@ -7,8 +7,10 @@ import { Paragraph } from '../atoms/text'
 
 const MissionContainer = styled.div`
   max-width: 60%;
-  margin-top: -150px;
+  margin-top: -100px;
   margin-bottom: 80px;
+  display: flex;
+  align-items: flex-end;
   p {
     color: ${(props) => props.theme.colors.black};
   }

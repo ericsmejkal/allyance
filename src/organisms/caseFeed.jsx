@@ -7,32 +7,32 @@ import { Case } from '../molecules/case'
 
 const CaseFeedContainer = styled.div`
   background: ${(props) => props.theme.colors.darkGray};
-  padding: 0 0 4%;
+  padding: 0 0 6%;
 `
 
 export function CaseFeed(props) {
   return (
     <CaseFeedContainer>
       <Container>
-        <Flex flexWrap="wrap" ml="-2" mr="-2">
-          <Box width={[1 / 3]} pl="2" pr="2">
+        <Flex flexWrap="wrap" ml="-10px" mr="-10px">
+          <Box width={[1 / 3]} pl="10px" pr="10px">
             <Case />
           </Box>
-          <Box width={[1 / 3]} pl="2" pr="2">
+          <Box width={[1 / 3]} pl="10px" pr="10px">
             <Case />
           </Box>
-          <Box width={[1 / 3]} pl="2" pr="2">
+          <Box width={[1 / 3]} pl="10px" pr="10px">
             <Case />
           </Box>
         </Flex>
-        <Flex flexWrap="wrap" ml="-2" mr="-2" mt="3">
-          <Box width={[1 / 3]} pl="2" pr="2">
+        <Flex flexWrap="wrap" ml="-10px" mr="-10px" mt="20px">
+          <Box width={[1 / 3]} pl="10px" pr="10px">
             <Case />
           </Box>
-          <Box width={[1 / 3]} pl="2" pr="2">
+          <Box width={[1 / 3]} pl="10px" pr="10px">
             <Case />
           </Box>
-          <Box width={[1 / 3]} pl="2" pr="2">
+          <Box width={[1 / 3]} pl="10px" pr="10px">
             <Case />
           </Box>
         </Flex>

@@ -59,7 +59,7 @@ export const H4 = styled.h4`
   font-size: 1rem;
 
   ${Mq.md} {
-    font-size: 1.2rem;
+    font-size: 1.45rem;
   }
 `
 

@@ -35,11 +35,12 @@ export const Base = css`
   a {
     color: ${Theme.colors.brandPrimary};
     text-decoration: none;
+    transition: all 0.2s ease-in-out;
 
     &:hover,
     &:active,
     &:focus {
-      text-decoration: underline;
+      color: ${Theme.colors.brandPrimary};
     }
   }
 

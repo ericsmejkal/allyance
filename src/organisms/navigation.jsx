@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 import { LightLogo } from '../atoms/logo'
 import { Container } from '../atoms/container'
-// import { H4 } from '../atoms/text'
+import { H4 } from '../atoms/text'
 
 const NavigationContainer = styled.div`
   background: transparent;
@@ -20,13 +20,36 @@ const NavigationContainer = styled.div`
 const LogoBox = styled.div`
   display: flex;
   justify-content: flex-start;
-  width: 50%;
+  width: 20%;
+`
+
+const SplitRight = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 80%;
 `
 
 const SocialBox = styled.div`
   display: flex;
   justify-content: flex-end;
-  width: 50%;
+`
+
+const LinkBox = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  H4 {
+    color: ${(props) => props.theme.colors.white};
+    padding-right: 50px;
+    font-size: 20px;
+    transition: 0.2s ease-in-out;
+
+    :hover {
+      color: ${(props) => props.theme.colors.brandPrimary};
+    }
+  }
 `
 
 const IconBox = styled.div`
@@ -35,8 +58,9 @@ const IconBox = styled.div`
   svg {
     cursor: pointer;
     transition: 0.2s ease-in-out;
+    margin-bottom: -8px;
     :hover {
-      opacity: 0.6;
+      stroke: ${(props) => props.theme.colors.brandPrimary};
     }
   }
 `
@@ -52,18 +76,28 @@ export function Navigation(props) {
             </Link>
           </LogoBox>
 
-          <SocialBox width={[1, 1, 1 / 2, 2 / 5]}>
-            <IconBox>
-              <ExternalLink href="https://twitter.com/ourallyance" target="_blank">
-                <Twitter color="white" />
-              </ExternalLink>
-            </IconBox>
-            <IconBox pl={4}>
-              <ExternalLink href="https://instagram.com/ourallyance" target="_blank">
-                <Instagram color="white" />
-              </ExternalLink>
-            </IconBox>
-          </SocialBox>
+          <SplitRight>
+            <LinkBox>
+              <Link to="/browse-cases">
+                <H4>Browse cases</H4>
+              </Link>
+              <Link to="/report-a-case">
+                <H4>Report A Case</H4>
+              </Link>
+            </LinkBox>
+            <SocialBox width={[1, 1, 1 / 2, 2 / 5]}>
+              <IconBox>
+                <ExternalLink href="https://twitter.com/ourallyance" target="_blank">
+                  <Twitter color="white" />
+                </ExternalLink>
+              </IconBox>
+              <IconBox pl={4}>
+                <ExternalLink href="https://instagram.com/ourallyance" target="_blank">
+                  <Instagram color="white" />
+                </ExternalLink>
+              </IconBox>
+            </SocialBox>
+          </SplitRight>
         </Flex>
       </Container>
     </NavigationContainer>

@@ -1,13 +1,13 @@
 import React from 'react'
 import { Box, Flex, Image } from '@rebass/emotion'
 import backgroundImage from '../assets/images/allyance__hero--landingpage.jpg'
-import heroImage from '../assets/images/hero-phone.png'
 import styled from '@emotion/styled'
 import ReactRotatingText from 'react-rotating-text'
 
 import { AccentButton } from '../atoms/button'
 import { Container } from '../atoms/container'
 import { H1, H3 } from '../atoms/text'
+import { HeroImage } from '../molecules/heroImage'
 
 const HeroContainer = styled.main`
   display: flex;
@@ -74,9 +74,7 @@ export function LargeHero(props) {
             </H1>
             <AccentButton title="Report A Case" />
           </Box>
-          <Box display="flex" marginTop={240}>
-            <Image src={heroImage} alt="allyance__hero-image" width="100%" />
-          </Box>
+          <HeroImage />
         </Flex>
       </Container>
 

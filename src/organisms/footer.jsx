@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Box, Flex, Link } from '@rebass/emotion'
+import { Box, Flex, Link as ExternalLink } from '@rebass/emotion'
 
 import { H5 } from '../atoms/text'
 
@@ -17,14 +17,14 @@ const FooterContainer = styled.div`
   }
 
   H5 {
-    color: #fff;
+    color: ${(props) => props.theme.colors.white};
     transition: 0.2s ease-in-out;
+
     a {
-      color: #fff;
-      text-decoration: none;
-    }
-    &:hover {
-      opacity: 0.8;
+      color: ${(props) => props.theme.colors.white};
+      :hover {
+        color: ${(props) => props.theme.colors.brandPrimary};
+      }
     }
   }
 
@@ -46,12 +46,12 @@ export function Footer(props) {
 
         <Box width={[1, 1, 1 / 2, 2 / 5]}>
           <H5 style={{ textAlign: 'right' }} pl={2}>
-            <Link
+            <ExternalLink
               href="https://www.instagram.com/clay.banks/?utm_medium=referral&utm_source=unsplash"
               target="_blank"
             >
               Photo: @clay.banks
-            </Link>
+            </ExternalLink>
           </H5>
         </Box>
       </Flex>
