@@ -9,7 +9,9 @@ import { H4, H5, H6 } from '../atoms/text'
 import { CaseStatusLabel } from '../atoms/label'
 import { Tag } from '../atoms/button'
 
-const CaseContainer = styled.div``
+const CaseContainer = styled.div`
+  width: 100%:
+`
 
 const CaseFeedImageContainer = styled.div`
   width: 100%;
@@ -95,6 +97,12 @@ const CaseStatus = styled.div`
   left: 20px;
 `
 
+// const incidents = [
+//   { id: 1, name: 'john smith', date: 'june 7, 2020' },
+//   { id: 2, name: 'davey jones', date: 'may 26, 2020' },
+//   { id: 3, name: 'maria garcia', date: 'may 31, 2020' },
+// ]
+
 export function Case(props) {
   return (
     <CaseContainer>
@@ -123,6 +131,11 @@ export function Case(props) {
             <Tag title="Tag" />
             <Tag title="Tag" />
             <Tag title="Tag" />
+            {/* {incidents.map((incident) => (
+              <Link to={`cases/${incident.id}`}>
+                <div>{incident.name}</div>
+              </Link>
+            ))} */}
           </CaseFeedMetaContainer>
         </Box>
       </Flex>

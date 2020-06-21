@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
+import { Search } from 'react-feather'
 import { darken } from 'polished'
 
 const BaseButton = styled.button`
@@ -25,7 +26,7 @@ const BaseButton = styled.button`
 
 const BaseAccentButton = styled(BaseButton)`
   background-color: initial;
-  color: ${(props) => props.theme.colors.White};
+  color: ${(props) => props.theme.colors.white};
   border-color: ${(props) => props.theme.colors.white};
   border-width: 4px;
   margin-top: 40px;
@@ -36,6 +37,27 @@ const BaseAccentButton = styled(BaseButton)`
     background-color: transparent;
     border: 4px solid ${(props) => props.theme.colors.white};
     color: ${(props) => props.theme.colors.brandPrimary};
+  }
+`
+
+const BaseAccentButtonDark = styled(BaseButton)`
+  background-color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.black};
+  border-color: ${(props) => props.theme.colors.black};
+  border-width: 4px;
+  margin-top: 40px;
+  display: flex;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: ${(props) => props.theme.colors.background};
+    border-color: ${(props) => props.theme.colors.black};
+    color: ${(props) => props.theme.colors.black};
+  }
+
+  svg {
+    margin-left: 10px;
   }
 `
 
@@ -68,9 +90,26 @@ export function Button(props) {
 
 export function AccentButton(props) {
   return (
-    <BaseAccentButton className="brand-button brand-button--accent" variant="secondary">
-      {props.title}
-    </BaseAccentButton>
+    <>
+      {props.variant === 'dark' ? (
+        <BaseAccentButtonDark
+          className="brand-button brand-button--accent-dark"
+          variant="secondary"
+        >
+          {props.icon === 'search' ? (
+            <>
+              {props.title} <Search size={22} />
+            </>
+          ) : (
+            props.title
+          )}
+        </BaseAccentButtonDark>
+      ) : (
+        <BaseAccentButton className="brand-button brand-button--accent" variant="secondary">
+          {props.title}
+        </BaseAccentButton>
+      )}
+    </>
   )
 }
 

@@ -15,11 +15,13 @@ export const Theme = {
     success: '#4AE79B',
     warning: '#FCF671',
     danger: '#EC5959',
+    lightestGrey: '#959595',
     lightGrey: '#5B5B5B',
     grey: '#3E3E3E',
     darkGrey: '#212121',
     black: '#030C07',
     white: '#FFFFFF',
+    background: '#F4F4F4',
   },
   fontweight: {
     light: 'normal',

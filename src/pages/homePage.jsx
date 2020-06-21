@@ -3,7 +3,7 @@ import MetaTags from 'react-meta-tags'
 import metaImage from '../assets/images/allyance__meta-image--landingpage.jpg'
 
 import { Mission } from '../molecules/mission'
-import { LargeHero } from '../organisms/largeHero'
+import { LargeHero } from '../organisms/hero'
 import { CaseFeed } from '../organisms/caseFeed'
 
 function HomePage(props) {
@@ -20,7 +20,7 @@ function HomePage(props) {
       </MetaTags>
       <LargeHero />
       <Mission />
-      <CaseFeed />
+      <CaseFeed page="home" />
     </main>
   )
 }

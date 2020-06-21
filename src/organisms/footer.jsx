@@ -3,6 +3,7 @@ import styled from '@emotion/styled'
 import { Box, Flex, Link as ExternalLink } from '@rebass/emotion'
 
 import { H5 } from '../atoms/text'
+import { EmailCapture } from '../organisms/emailCapture'
 
 const FooterContainer = styled.div`
   background: #000;
@@ -35,26 +36,29 @@ const FooterContainer = styled.div`
 
 export function Footer(props) {
   return (
-    <FooterContainer>
-      <Flex flexWrap={['nowrap', 'nowrap', 'wrap', 'wrap']} pl={[4, 4, 6, 6]} pr={[4, 4, 6, 6]}>
-        <Box width={[1, 1, 1 / 2, 3 / 5]}>
-          <H5>
-            © 2020 allyance – All Rights Reserved –{' '}
-            <a href="mailto:info@allyance.co">info@allyance.co</a>
-          </H5>
-        </Box>
+    <>
+      <EmailCapture />
+      <FooterContainer>
+        <Flex flexWrap={['nowrap', 'nowrap', 'wrap', 'wrap']} pl={[4, 4, 6, 6]} pr={[4, 4, 6, 6]}>
+          <Box width={[1, 1, 1 / 2, 3 / 5]}>
+            <H5>
+              © 2020 allyance – All Rights Reserved –{' '}
+              <a href="mailto:info@allyance.co">info@allyance.co</a>
+            </H5>
+          </Box>
 
-        <Box width={[1, 1, 1 / 2, 2 / 5]}>
-          <H5 style={{ textAlign: 'right' }} pl={2}>
-            <ExternalLink
-              href="https://www.instagram.com/clay.banks/?utm_medium=referral&utm_source=unsplash"
-              target="_blank"
-            >
-              Photo: @clay.banks
-            </ExternalLink>
-          </H5>
-        </Box>
-      </Flex>
-    </FooterContainer>
+          <Box width={[1, 1, 1 / 2, 2 / 5]}>
+            <H5 style={{ textAlign: 'right' }} pl={2}>
+              <ExternalLink
+                href="https://www.instagram.com/clay.banks/?utm_medium=referral&utm_source=unsplash"
+                target="_blank"
+              >
+                Photo: @clay.banks
+              </ExternalLink>
+            </H5>
+          </Box>
+        </Flex>
+      </FooterContainer>
+    </>
   )
 }

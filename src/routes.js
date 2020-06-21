@@ -2,7 +2,8 @@ import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import HomePage from './pages/homePage'
-import CaseFeedPage from './pages/caseFeedPage'
+import BrowseCasesPage from './pages/browseCasesPage'
+import ReportCasePage from './pages/reportCasePage'
 import CaseDetailPage from './pages/caseDetailPage'
 
 import { Navigation } from './organisms/navigation'
@@ -16,8 +17,11 @@ const Routes = () => {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/cases">
-          <CaseFeedPage />
+        <Route exact path="/browse-cases">
+          <BrowseCasesPage />
+        </Route>
+        <Route exact path="/report-a-case">
+          <ReportCasePage />
         </Route>
         <Route path="/cases/:id">
           <CaseDetailPage />

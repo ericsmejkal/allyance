@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import { Input } from '../atoms/input'
+import { Input, InputLight } from '../atoms/input'
 import { Button } from '../atoms/button'
 
 const FormContainer = styled.div`
@@ -29,6 +29,15 @@ export function EmailSignup(props) {
   return (
     <FormContainer>
       <EmailInput placeholder={props.placeholder} email={true} />
+      <SubmitButton title={props.title} />
+    </FormContainer>
+  )
+}
+
+export function EmailSignupLight(props) {
+  return (
+    <FormContainer>
+      <InputLight placeholder={props.placeholder} email={true} />
       <SubmitButton title={props.title} />
     </FormContainer>
   )

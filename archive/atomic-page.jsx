@@ -51,7 +51,7 @@ export function AtomicPage(props) {
             <Box width={[1, 1, 1 / 2, 1 / 2]}>
               <H4>Button</H4>
               <Button title={'Atom'} className="button" />
-              <AccentButton title={'Atom Accent'} />
+              <AccentButton title={'Atom Accent'} variant="dark" />
             </Box>
           </Flex>
         </Container>

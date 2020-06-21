@@ -6,7 +6,7 @@ import ReactRotatingText from 'react-rotating-text'
 
 import { AccentButton } from '../atoms/button'
 import { Container } from '../atoms/container'
-import { H1, H3 } from '../atoms/text'
+import { H1, H3, H5 } from '../atoms/text'
 import { HeroImage } from '../molecules/heroImage'
 
 const HeroContainer = styled.main`
@@ -47,6 +47,29 @@ const CustomBackground = styled.div`
   left: 0;
 `
 
+const SmallHeroContainer = styled.main`
+  display: flex;
+  align-items: center;
+  padding: 12% 0 10%;
+  margin-bottom: -100px;
+  background: linear-gradient(180deg, #030c07 0%, #2d2d2d 100%);
+  width: 100%;
+
+  H1 {
+    color: #fff;
+    max-width: 450px;
+    line-height: 50px;
+    margin-top: 30px;
+
+    @media screen and (max-width: 1000px) {
+      min-height: 130px;
+    }
+  }
+  H5 {
+    color: ${(props) => props.theme.colors.lightestGrey};
+  }
+`
+
 export function LargeHero(props) {
   return (
     <HeroContainer>
@@ -72,7 +95,7 @@ export function LargeHero(props) {
                 cursor={false}
               />
             </H1>
-            <AccentButton title="Report A Case" />
+            <AccentButton title="Report A Case" variant="light" />
           </Box>
           <HeroImage />
         </Flex>
@@ -87,5 +110,20 @@ export function LargeHero(props) {
         }}
       />
     </HeroContainer>
+  )
+}
+
+export function SmallHero(props) {
+  return (
+    <SmallHeroContainer>
+      <Container style={{ zIndex: '4' }}>
+        <Flex>
+          <Box>
+            <H5>{props.page}</H5>
+            <H1>{props.header}</H1>
+          </Box>
+        </Flex>
+      </Container>
+    </SmallHeroContainer>
   )
 }
