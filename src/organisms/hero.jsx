@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Image } from '@rebass/emotion'
+import { Box, Flex } from '@rebass/emotion'
 import backgroundImage from '../assets/images/allyance__hero--landingpage.jpg'
 import styled from '@emotion/styled'
 import ReactRotatingText from 'react-rotating-text'
