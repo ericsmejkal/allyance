@@ -10,7 +10,6 @@ import { Container } from '../atoms/container'
 import { H1, H3 } from '../atoms/text'
 
 const HeroContainer = styled.main`
-  height: 500px;
   display: flex;
   align-items: center;
   z-index: 3;
@@ -30,7 +29,7 @@ const HeroContainer = styled.main`
 
 const CustomOverlay = styled.div`
   background: linear-gradient(180deg, #030c07 0%, #2d2d2d 100%);
-  height: 100vh;
+  height: 700px;
   width: 100%;
   position: absolute;
   opacity: 0.975;
@@ -40,7 +39,7 @@ const CustomOverlay = styled.div`
 `
 
 const CustomBackground = styled.div`
-  height: 100vh;
+  height: 700px;
   width: 100%;
   position: absolute;
   z-index: 1;
@@ -52,7 +51,7 @@ export function LargeHero(props) {
   return (
     <HeroContainer>
       <Container style={{ zIndex: '4' }}>
-        <Flex ealignItems="center">
+        <Flex alignItems="center" justifyContent="space-between">
           <Box>
             <H3>Strength in numbers.</H3>
             <H1>
@@ -75,7 +74,7 @@ export function LargeHero(props) {
             </H1>
             <AccentButton title="Report A Case" />
           </Box>
-          <Box>
+          <Box display="flex" marginTop={140}>
             <Image src={heroImage} alt="allyance__hero-image" />
           </Box>
         </Flex>

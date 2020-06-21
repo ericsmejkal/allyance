@@ -5,6 +5,7 @@ import { Twitter, Instagram } from 'react-feather'
 import { Link } from 'react-router-dom'
 
 import { LightLogo } from '../atoms/logo'
+import { Container } from '../atoms/container'
 // import { H4 } from '../atoms/text'
 
 const NavigationContainer = styled.div`
@@ -43,26 +44,28 @@ const IconBox = styled.div`
 export function Navigation(props) {
   return (
     <NavigationContainer>
-      <Flex flexWrap="wrap" width={1} ml={[4, 4, 6, 6]} mr={[4, 4, 6, 6]}>
-        <LogoBox width={[1, 1, 1 / 2, 3 / 5]}>
-          <Link to="/">
-            <LightLogo />
-          </Link>
-        </LogoBox>
+      <Container>
+        <Flex flexWrap="wrap" width={1}>
+          <LogoBox width={[1, 1, 1 / 2, 3 / 5]}>
+            <Link to="/">
+              <LightLogo />
+            </Link>
+          </LogoBox>
 
-        <SocialBox width={[1, 1, 1 / 2, 2 / 5]}>
-          <IconBox>
-            <ExternalLink href="https://twitter.com/ourallyance" target="_blank">
-              <Twitter color="white" />
-            </ExternalLink>
-          </IconBox>
-          <IconBox pl={4}>
-            <ExternalLink href="https://instagram.com/ourallyance" target="_blank">
-              <Instagram color="white" />
-            </ExternalLink>
-          </IconBox>
-        </SocialBox>
-      </Flex>
+          <SocialBox width={[1, 1, 1 / 2, 2 / 5]}>
+            <IconBox>
+              <ExternalLink href="https://twitter.com/ourallyance" target="_blank">
+                <Twitter color="white" />
+              </ExternalLink>
+            </IconBox>
+            <IconBox pl={4}>
+              <ExternalLink href="https://instagram.com/ourallyance" target="_blank">
+                <Instagram color="white" />
+              </ExternalLink>
+            </IconBox>
+          </SocialBox>
+        </Flex>
+      </Container>
     </NavigationContainer>
   )
 }

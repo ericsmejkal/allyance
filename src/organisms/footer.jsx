@@ -5,9 +5,9 @@ import { Box, Flex, Link } from '@rebass/emotion'
 import { H5 } from '../atoms/text'
 
 const FooterContainer = styled.div`
-  background: transparent;
+  background: #000;
   padding: 40px 0;
-  position: absolute;
+  position: static;
   bottom: 0;
   width: 100%;
   justify-content: space-between;

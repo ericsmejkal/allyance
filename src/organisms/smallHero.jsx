@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/emotion'
 
 import { Container } from '../atoms/container'
-import { Paragraph, H1 } from '../atoms/text'
+import { H1 } from '../atoms/text'
 
 const SignUpContainer = styled.div`
   background: ${(props) => props.theme.colors.darkGray};
