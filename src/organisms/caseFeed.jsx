@@ -7,7 +7,7 @@ import { SubContainer, Container, FullWidthContainer } from '../atoms/container'
 import { Sort } from '../atoms/sort'
 import { Filter } from '../atoms/filter'
 import { AccentButton } from '../atoms/button'
-import { Case } from '../molecules/case'
+import Case from '../molecules/case'
 import { Pagination } from '../molecules/pagination'
 
 const CaseFeedContainer = styled.div`

@@ -6,7 +6,7 @@ import ReactRotatingText from 'react-rotating-text'
 
 import { AccentButton } from '../atoms/button'
 import { Container } from '../atoms/container'
-import { H1, H3, H5 } from '../atoms/text'
+import { H1, H3, H4, H5 } from '../atoms/text'
 import { HeroImage } from '../molecules/heroImage'
 
 const HeroContainer = styled.main`
@@ -18,7 +18,7 @@ const HeroContainer = styled.main`
     color: #fff;
     min-height: 190px;
 
-    @media screen and (max-width: 1000px) {
+    @media screen and (max-width: 1000px) {e
       min-height: 130px;
     }
   }
@@ -64,6 +64,9 @@ const SmallHeroContainer = styled.main`
     @media screen and (max-width: 1000px) {
       min-height: 130px;
     }
+  }
+  H4 {
+    color: ${(props) => props.theme.colors.lightestGrey};
   }
   H5 {
     color: ${(props) => props.theme.colors.lightestGrey};
@@ -121,6 +124,7 @@ export function SmallHero(props) {
           <Box>
             <H5>{props.page}</H5>
             <H1>{props.header}</H1>
+            <H4>{props.subHeader}</H4>
           </Box>
         </Flex>
       </Container>

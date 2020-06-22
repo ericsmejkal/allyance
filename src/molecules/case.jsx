@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/emotion'
 import CaseImage from '../assets/images/allyance__casefeedimage__placeholder.png'
@@ -11,6 +11,8 @@ import { Tag } from '../atoms/button'
 
 const CaseContainer = styled.div`
   width: 100%:
+  background: #000;
+  height: 100%;
 `
 
 const CaseFeedImageContainer = styled.div`
@@ -27,7 +29,28 @@ const CaseFeedImage = styled.div`
   background-size: cover;
   height: 320px;
   width: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 56.25%, #000000 100%), url(${CaseImage});
+  background: url(${CaseImage});
+`
+
+const CaseFeedOverlay = styled.div`
+  width: 100%;
+  background: transparent;
+  height: 320px;
+  cursor: pointer;
+  position: absolute;
+  background-size: cover;
+  transition: 0.2s ease-in-out;
+  top: 0;
+
+  :hover {
+    display: block;
+    background: rgba(0, 0, 0, 0.2);
+    transition: 0.2s ease-in-out;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
 `
 
 const CaseFeedTitle = styled.div`
@@ -95,6 +118,7 @@ const CaseStatus = styled.div`
   position: absolute;
   top: 20px;
   left: 20px;
+  z-index: 10;
 `
 
 // const incidents = [
@@ -103,42 +127,55 @@ const CaseStatus = styled.div`
 //   { id: 3, name: 'maria garcia', date: 'may 31, 2020' },
 // ]
 
-export function Case(props) {
-  return (
-    <CaseContainer>
-      <Flex flexWrap="wrap">
-        <Box width={1}>
-          <CaseFeedImageContainer>
-            <CaseStatus>
-              <CaseStatusLabel title="Case Open" />
-            </CaseStatus>
-            <CaseFeedImage />
-            <CaseFeedTitle>
-              <Play color="white" size={32} />
-              <Link to="/case-details">
-                <H4>George Floyd</H4>
+class Case extends Component {
+  render() {
+    return (
+      <CaseContainer>
+        <Flex flexWrap="wrap">
+          <Box width={1}>
+            <CaseFeedImageContainer>
+              <CaseStatus>
+                <CaseStatusLabel title="Case Open" />
+              </CaseStatus>
+              <Link to="/cases/:id">
+                <CaseFeedOverlay
+                  style={{
+                    backgroundImage:
+                      'linear-gradient(180deg, rgba(0, 0, 0, 0) 56.25%, #000000 100%)',
+                  }}
+                >
+                  <CaseFeedTitle>
+                    <Play color="white" size={32} />
+                    <Link to="/cases/:id">
+                      <H4>George Floyd</H4>
+                    </Link>
+                    <Link to="/cases/:id">
+                      <H5>Murdered by police in Minneapolis</H5>
+                    </Link>
+                  </CaseFeedTitle>
+                </CaseFeedOverlay>
               </Link>
-              <Link to="/case-details">
-                <H5>Murdered by police in Minneapolis</H5>
-              </Link>
-            </CaseFeedTitle>
-          </CaseFeedImageContainer>
-          <CaseFeedMetaContainer>
-            <CaseLogistics>
-              <H5>Minneapolis, MN</H5>
-              <H6>1/24/19</H6>
-            </CaseLogistics>
-            <Tag title="Tag" />
-            <Tag title="Tag" />
-            <Tag title="Tag" />
-            {/* {incidents.map((incident) => (
+              <CaseFeedImage />
+            </CaseFeedImageContainer>
+            <CaseFeedMetaContainer>
+              <CaseLogistics>
+                <H5>Minneapolis, MN</H5>
+                <H6>1/24/19</H6>
+              </CaseLogistics>
+              <Tag title="Tag" />
+              <Tag title="Tag" />
+              <Tag title="Tag" />
+              {/* {incidents.map((incident) => (
               <Link to={`cases/${incident.id}`}>
                 <div>{incident.name}</div>
               </Link>
             ))} */}
-          </CaseFeedMetaContainer>
-        </Box>
-      </Flex>
-    </CaseContainer>
-  )
+            </CaseFeedMetaContainer>
+          </Box>
+        </Flex>
+      </CaseContainer>
+    )
+  }
 }
+
+export default Case
