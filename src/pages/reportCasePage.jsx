@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 
 import { SmallHero } from '../organisms/hero'
 import { Container } from '../atoms/container'
-import { ReportCaseForm } from '../organisms/reportCaseForm'
+import ReportCaseForm from '../organisms/reportCaseForm'
 
 const PageContainer = styled.div`
   background-color: ${(props) => props.theme.colors.background};
