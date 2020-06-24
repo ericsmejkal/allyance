@@ -132,7 +132,7 @@ const Case = (props) => {
             <CaseStatus>
               <CaseStatusLabel title="Case Open" />
             </CaseStatus>
-            <Link to="/cases/:id">
+            <Link to={`/cases/${incident.id}`}>
               <CaseFeedOverlay
                 style={{
                   backgroundImage: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 56.25%, #000000 100%)',
@@ -143,7 +143,7 @@ const Case = (props) => {
                   <Link to="/cases/:id">
                     <H4>George Floyd</H4>
                   </Link>
-                  <Link to="/cases/:id">
+                  <Link to={`/cases/${incident.id}`}>
                     <H5>{incident && incident.shortDescription}</H5>
                   </Link>
                 </CaseFeedTitle>
@@ -153,12 +153,17 @@ const Case = (props) => {
           </CaseFeedImageContainer>
           <CaseFeedMetaContainer>
             <CaseLogistics>
-              <H5>Minneapolis, MN</H5>
-              <H6>1/24/19</H6>
+              <H5>
+                {incident.city}
+                {incident.city && incident.state ? ', ' : null}
+                {incident.state}
+              </H5>
+              <H6>{incident.date}</H6>
             </CaseLogistics>
-            <Tag title="Tag" />
-            <Tag title="Tag" />
-            <Tag title="Tag" />
+            {incident.tags &&
+              incident.tags.map((tag, i) => {
+                return <Tag title={tag.content} tag={tag} key={i} />
+              })}
           </CaseFeedMetaContainer>
         </Box>
       </Flex>

@@ -28,18 +28,23 @@ const FeedControls = styled.div`
 const CASES = gql`
   {
     incidents {
+      id
       shortDescription
       longDescription
+      city
+      state
+      zipCode
+      date
+      tags {
+        id
+        content
+      }
     }
   }
 `
 
 export function CaseFeed(props) {
   const { loading, error, data } = useQuery(CASES)
-
-  console.log('locading', loading)
-  console.log('error', error)
-  console.log('cases', data)
 
   return (
     <CaseFeedContainer>
