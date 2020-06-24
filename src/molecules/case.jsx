@@ -121,61 +121,54 @@ const CaseStatus = styled.div`
   z-index: 10;
 `
 
-// const incidents = [
-//   { id: 1, name: 'john smith', date: 'june 7, 2020' },
-//   { id: 2, name: 'davey jones', date: 'may 26, 2020' },
-//   { id: 3, name: 'maria garcia', date: 'may 31, 2020' },
-// ]
+const Case = (props) => {
+  const incident = props.incident
 
-class Case extends Component {
-  render() {
-    return (
-      <CaseContainer>
-        <Flex flexWrap="wrap">
-          <Box width={1}>
-            <CaseFeedImageContainer>
-              <CaseStatus>
-                <CaseStatusLabel title="Case Open" />
-              </CaseStatus>
-              <Link to="/cases/:id">
-                <CaseFeedOverlay
-                  style={{
-                    backgroundImage:
-                      'linear-gradient(180deg, rgba(0, 0, 0, 0) 56.25%, #000000 100%)',
-                  }}
-                >
-                  <CaseFeedTitle>
-                    <Play color="white" size={32} />
-                    <Link to="/cases/:id">
-                      <H4>George Floyd</H4>
-                    </Link>
-                    <Link to="/cases/:id">
-                      <H5>Murdered by police in Minneapolis</H5>
-                    </Link>
-                  </CaseFeedTitle>
-                </CaseFeedOverlay>
-              </Link>
-              <CaseFeedImage />
-            </CaseFeedImageContainer>
-            <CaseFeedMetaContainer>
-              <CaseLogistics>
-                <H5>Minneapolis, MN</H5>
-                <H6>1/24/19</H6>
-              </CaseLogistics>
-              <Tag title="Tag" />
-              <Tag title="Tag" />
-              <Tag title="Tag" />
-              {/* {incidents.map((incident) => (
-              <Link to={`cases/${incident.id}`}>
-                <div>{incident.name}</div>
-              </Link>
-            ))} */}
-            </CaseFeedMetaContainer>
-          </Box>
-        </Flex>
-      </CaseContainer>
-    )
-  }
+  return (
+    <CaseContainer>
+      <Flex flexWrap="wrap">
+        <Box width={1}>
+          <CaseFeedImageContainer>
+            <CaseStatus>
+              <CaseStatusLabel title="Case Open" />
+            </CaseStatus>
+            <Link to={`/cases/${incident.id}`}>
+              <CaseFeedOverlay
+                style={{
+                  backgroundImage: 'linear-gradient(180deg, rgba(0, 0, 0, 0) 56.25%, #000000 100%)',
+                }}
+              >
+                <CaseFeedTitle>
+                  <Play color="white" size={32} />
+                  <Link to="/cases/:id">
+                    <H4>George Floyd</H4>
+                  </Link>
+                  <Link to={`/cases/${incident.id}`}>
+                    <H5>{incident && incident.shortDescription}</H5>
+                  </Link>
+                </CaseFeedTitle>
+              </CaseFeedOverlay>
+            </Link>
+            <CaseFeedImage />
+          </CaseFeedImageContainer>
+          <CaseFeedMetaContainer>
+            <CaseLogistics>
+              <H5>
+                {incident.city}
+                {incident.city && incident.state ? ', ' : null}
+                {incident.state}
+              </H5>
+              <H6>{incident.date}</H6>
+            </CaseLogistics>
+            {incident.tags &&
+              incident.tags.map((tag, i) => {
+                return <Tag title={tag.content} tag={tag} key={i} />
+              })}
+          </CaseFeedMetaContainer>
+        </Box>
+      </Flex>
+    </CaseContainer>
+  )
 }
 
 export default Case

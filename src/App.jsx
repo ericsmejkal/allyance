@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Global } from '@emotion/core'
 import { ThemeProvider } from 'emotion-theming'
+import { ApolloProvider } from '@apollo/react-hooks'
+import client from './apollo'
 
 import { Theme } from './styles/settings/theme'
 import { GlobalStyles } from './styles/global'
@@ -11,7 +13,9 @@ class App extends Component {
     return (
       <ThemeProvider theme={Theme}>
         <Global styles={GlobalStyles} />
-        <Routes />
+        <ApolloProvider client={client}>
+          <Routes />
+        </ApolloProvider>
       </ThemeProvider>
     )
   }
