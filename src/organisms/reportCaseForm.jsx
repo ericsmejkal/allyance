@@ -11,7 +11,8 @@ import ReportCaseTags from '../molecules/reportCaseTags'
 const ReportCaseContainer = styled.div`
   width: 100%;
   height: auto;
-  padding: 35px 0;
+  padding: 35px 0 120px;
+  position: relative;
 `
 
 const NextButton = styled.div`
@@ -23,6 +24,9 @@ const NextButton = styled.div`
   padding: 10px; 30px;
   width: 100px;
   cursor: pointer;
+  position: absolute;
+  right: 0;
+  bottom: 80px;
 `
 
 const BackButton = styled.div`
@@ -34,6 +38,9 @@ const BackButton = styled.div`
   padding: 10px; 30px;
   width: 100px;
   cursor: pointer;
+  position: absolute;
+  left: 0;
+  bottom: 80px;
 `
 
 const ReportCaseButtons = styled.div`
@@ -62,15 +69,20 @@ class ReportCaseForm extends React.Component {
   }
 
   // WIP - Fix later
-  handleSubmit = (event) => {
-    event.preventDefault()
-    const {} = this.state
-    alert(`submission complete`)
-  }
+  // handleSubmit = (event) => {
+  //   let currentStep = this.state.currentStep
+  //   if (currentStep === 5) {
+  //     return (
+  //       <SubmitButton className="btn btn-secondary" type="button" onClick={this._prev}>
+  //         Submit
+  //       </SubmitButton>
+  //     )
+  //   }
+  //   return null
+  // }
 
   _next() {
     let currentStep = this.state.currentStep
-    // If the current step is 1 or 2, then add one on "next" button click
     currentStep = currentStep >= 4 ? 5 : currentStep + 1
     this.setState({
       currentStep: currentStep,
@@ -79,7 +91,6 @@ class ReportCaseForm extends React.Component {
 
   _prev() {
     let currentStep = this.state.currentStep
-    // If the current step is 2 or 3, then subtract one on "previous" button click
     currentStep = currentStep <= 1 ? 1 : currentStep - 1
     this.setState({
       currentStep: currentStep,
@@ -88,7 +99,6 @@ class ReportCaseForm extends React.Component {
 
   get previousButton() {
     let currentStep = this.state.currentStep
-    // If the current step is not 1, then render the "previous" button
     if (currentStep !== 1) {
       return (
         <BackButton className="btn btn-secondary" type="button" onClick={this._prev}>
@@ -102,7 +112,7 @@ class ReportCaseForm extends React.Component {
   get nextButton() {
     let currentStep = this.state.currentStep
     // If the current step is not 6, then render the "next" button
-    if (currentStep < 6) {
+    if (currentStep < 5) {
       return (
         <NextButton className="btn btn-primary float-right" type="button" onClick={this._next}>
           Next
@@ -145,121 +155,4 @@ class ReportCaseForm extends React.Component {
   }
 }
 
-// const ReportCaseStepContainer = styled.div`
-//   display: Flex;
-//   align-items: AlignCenter;
-// }
-// `
-
-// function ReportCaseVictim(props) {
-//   if (props.currentStep !== 1) {
-//     return null
-//   }
-//   return (
-//     <ReportCaseStepContainer className="form-group">
-//       <label htmlFor="email">Victim</label>
-//       <input
-//         className="form-control"
-//         id="email"
-//         name="email"
-//         type="text"
-//         placeholder="Enter email"
-//         value={props.email}
-//         onChange={props.handleChange}
-//       />
-//     </ReportCaseStepContainer>
-//   )
-// }
-
-// function ReportCasePerpetrator(props) {
-//   if (props.currentStep !== 2) {
-//     return null
-//   }
-//   return (
-//     <div className="form-group">
-//       <label htmlFor="username">Perpetrator</label>
-//       <input
-//         className="form-control"
-//         id="username"
-//         name="username"
-//         type="text"
-//         placeholder="Enter username"
-//         value={props.username}
-//         onChange={props.handleChange}
-//       />
-//     </div>
-//   )
-// }
-
-// function ReportCaseIncident(props) {
-//   if (props.currentStep !== 3) {
-//     return null
-//   }
-//   return (
-//     <React.Fragment>
-//       <div className="form-group">
-//         <label htmlFor="password">Incident</label>
-//         <input
-//           className="form-control"
-//           id="password"
-//           name="password"
-//           type="password"
-//           placeholder="Enter password"
-//           value={props.password}
-//           onChange={props.handleChange}
-//         />
-//       </div>
-//       <button className="btn btn-success btn-block">Sign up</button>
-//     </React.Fragment>
-//   )
-// }
-
-// function ReportCaseEvidence(props) {
-//   if (props.currentStep !== 4) {
-//     return null
-//   }
-//   return (
-//     <React.Fragment>
-//       <div className="form-group">
-//         <label htmlFor="password">Evidence</label>
-//         <input
-//           className="form-control"
-//           id="password"
-//           name="password"
-//           type="password"
-//           placeholder="Enter password"
-//           value={props.password}
-//           onChange={props.handleChange}
-//         />
-//       </div>
-//       <button className="btn btn-success btn-block">Sign up</button>
-//     </React.Fragment>
-//   )
-// }
-
-// function ReportCaseTags(props) {
-//   if (props.currentStep !== 5) {
-//     return null
-//   }
-//   return (
-//     <React.Fragment>
-//       <div className="form-group">
-//         <label htmlFor="password">Tags</label>
-//         <input
-//           className="form-control"
-//           id="password"
-//           name="password"
-//           type="password"
-//           placeholder="Enter password"
-//           value={props.password}
-//           onChange={props.handleChange}
-//         />
-//       </div>
-//       <button className="btn btn-success btn-block">Sign up</button>
-//     </React.Fragment>
-//   )
-// }
-
 export default ReportCaseForm
-
-// ReactDOM.render(<ReportCaseForm />, document.getElementById('root'))
