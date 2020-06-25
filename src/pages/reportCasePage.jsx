@@ -13,7 +13,7 @@ const PageContainer = styled.div`
 const ReportCasePage = () => {
   return (
     <>
-      <SmallHero page="Repot a case" header="We need your help. And so does the nation." />
+      <SmallHero page="Report a case" header="We need your help. And so does the nation." />
       <Container>
         <PageContainer>
           <ReportCaseForm />

@@ -45,21 +45,15 @@ const ReportCaseButtons = styled.div`
 class ReportCaseForm extends React.Component {
   constructor(props) {
     super(props)
-    // Set the initial input values
     this.state = {
       currentStep: 1, // Default is Step 1
-      email: '',
-      username: '',
-      password: '',
     }
-    // Bind the submission to handleChange()
+
     this.handleChange = this.handleChange.bind(this)
-    // Bind new functions for next and previous
     this._next = this._next.bind(this)
     this._prev = this._prev.bind(this)
   }
 
-  // Use the submitted data to set the state
   handleChange(event) {
     const { name, value } = event.target
     this.setState({
@@ -67,18 +61,13 @@ class ReportCaseForm extends React.Component {
     })
   }
 
-  // Trigger an alert on form submission
+  // WIP - Fix later
   handleSubmit = (event) => {
     event.preventDefault()
-    const { email, username, password } = this.state
-    alert(`Your registration detail: \n
-      Email: ${email} \n
-      Username: ${username} \n
-      Password: ${password}`)
+    const {} = this.state
+    alert(`submission complete`)
   }
 
-  // Test current step with ternary
-  // _next and _previous functions will be called on button click
   _next() {
     let currentStep = this.state.currentStep
     // If the current step is 1 or 2, then add one on "next" button click
@@ -97,7 +86,6 @@ class ReportCaseForm extends React.Component {
     })
   }
 
-  // The "next" and "previous" button functions
   get previousButton() {
     let currentStep = this.state.currentStep
     // If the current step is not 1, then render the "previous" button
@@ -108,13 +96,12 @@ class ReportCaseForm extends React.Component {
         </BackButton>
       )
     }
-    // ...else return nothing
     return null
   }
 
   get nextButton() {
     let currentStep = this.state.currentStep
-    // If the current step is not 3, then render the "next" button
+    // If the current step is not 6, then render the "next" button
     if (currentStep < 6) {
       return (
         <NextButton className="btn btn-primary float-right" type="button" onClick={this._next}>
@@ -122,7 +109,6 @@ class ReportCaseForm extends React.Component {
         </NextButton>
       )
     }
-    // ...else render nothing
     return null
   }
 

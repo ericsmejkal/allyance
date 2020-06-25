@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import { SubContainer } from '../atoms/container'
 import { H2 } from '../atoms/text'
 
 const ReportCaseContainer = styled.div`
@@ -14,12 +13,10 @@ class ReportCaseTags extends React.Component {
       return null
     }
     return (
-      <SubContainer>
-        <ReportCaseContainer>
-          <H2>Tags</H2>
-          Tags Only Text
-        </ReportCaseContainer>
-      </SubContainer>
+      <ReportCaseContainer>
+        <H2>Tags</H2>
+        Tags Only Text
+      </ReportCaseContainer>
     )
   }
 }
