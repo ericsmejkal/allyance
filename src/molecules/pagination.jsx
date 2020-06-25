@@ -36,6 +36,7 @@ export function Pagination(props) {
   return (
     <PaginationContainer>
       <ArrowLeft />
+      {/* PLACEHOLDER FOR NOW */}
       <H4>1</H4> <H4>2</H4> <H4>3</H4> <H4>4</H4> <H4>5</H4>
       <ArrowRight />
     </PaginationContainer>

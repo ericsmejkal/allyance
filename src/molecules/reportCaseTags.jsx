@@ -22,28 +22,26 @@ const CASES = gql`
   }
 `
 
-class ReportCaseTags extends React.Component {
-  render() {
-    // const { data } = useQuery(CASES)
-    if (this.props.currentStep !== 5) {
-      return null
-    }
-    return (
-      <ReportCaseContainer>
-        <ReportCaseTitle
-          stepTitle="Click all tags associated with this incident"
-          stepNumber={this.props.currentStep}
-        />
-        <form>
-          {/* {data && data.incidents.tags
-            ? data.incidents.tags.map((tag, i) => {
-                return <Tag title={tag.content} tag={tag} key={i} variant="light" />
-              })
-            : null} */}
-        </form>
-      </ReportCaseContainer>
-    )
+export function ReportCaseTags(props) {
+  const { data } = useQuery(CASES)
+  if (props.currentStep !== 5) {
+    return null
   }
+  return (
+    <ReportCaseContainer>
+      <ReportCaseTitle
+        stepTitle="Click all tags associated with this incident"
+        stepNumber={props.currentStep}
+      />
+      <form>
+        {data && data.tags
+          ? data.tags.map((tag, i) => {
+              return <Tag title={tag.content} tag={tag} key={i} variant="light" />
+            })
+          : null}
+      </form>
+    </ReportCaseContainer>
+  )
 }
 
 export default ReportCaseTags

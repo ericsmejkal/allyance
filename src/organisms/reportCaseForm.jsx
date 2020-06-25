@@ -16,9 +16,12 @@ const ReportCaseContainer = styled.div`
 `
 
 const NextButton = styled.div`
-  border: 4px solid #000;
-  color: #000;
+  font-size: 1.2rem;
+  border: 4px solid ${(props) => props.theme.colors.black};
+  color: ${(props) => props.theme.colors.black};
+  background-color: ${(props) => props.theme.colors.white};
   display: flex;
+  transition: 0.2s ease-in-out;
   align-items: center;
   justify-content: center;
   padding: 10px; 30px;
@@ -27,11 +30,22 @@ const NextButton = styled.div`
   position: absolute;
   right: 0;
   bottom: 80px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: ${(props) => props.theme.colors.background};
+    border-color: ${(props) => props.theme.colors.black};
+    color: ${(props) => props.theme.colors.black};
+  }
 `
 
 const BackButton = styled.div`
-  border: 4px solid #000;
-  color: #000;
+  font-size: 1.2rem;
+  transition: 0.2s ease-in-out;
+  border: 4px solid ${(props) => props.theme.colors.black};
+  color: ${(props) => props.theme.colors.black};
+  background-color: ${(props) => props.theme.colors.white};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,6 +55,14 @@ const BackButton = styled.div`
   position: absolute;
   left: 0;
   bottom: 80px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: ${(props) => props.theme.colors.background};
+    border-color: ${(props) => props.theme.colors.black};
+    color: ${(props) => props.theme.colors.black};
+  }
 `
 
 const ReportCaseButtons = styled.div`
