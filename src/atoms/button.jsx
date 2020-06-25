@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from '@emotion/styled'
-import { Search } from 'react-feather'
+import { Search, Upload, Plus } from 'react-feather'
 import { darken } from 'polished'
 
 const BaseButton = styled.button`
@@ -29,7 +29,7 @@ const BaseAccentButton = styled(BaseButton)`
   color: ${(props) => props.theme.colors.white};
   border-color: ${(props) => props.theme.colors.white};
   border-width: 4px;
-  margin-top: 40px;
+  margin-top: ${(props) => (props.noMargin === 'true' ? '0px' : '40px')};
 
   &:hover,
   &:focus,
@@ -45,8 +45,56 @@ const BaseAccentButtonDark = styled(BaseButton)`
   color: ${(props) => props.theme.colors.black};
   border-color: ${(props) => props.theme.colors.black};
   border-width: 4px;
-  margin-top: 40px;
+  margin-top: ${(props) => (props.noMargin === 'true' ? '40px' : '10px')};
   display: flex;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: ${(props) => props.theme.colors.background};
+    border-color: ${(props) => props.theme.colors.black};
+    color: ${(props) => props.theme.colors.black};
+  }
+
+  svg {
+    margin-left: 10px;
+  }
+`
+
+const BasePlusButton = styled(BaseButton)`
+  background-color: initial;
+  height: 50px;
+  color: ${(props) => props.theme.colors.white};
+  border-color: ${(props) => props.theme.colors.white};
+  border-width: 4px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 0px;
+  justify-content: center;
+  margin-top: 8px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: transparent;
+    border: 4px solid ${(props) => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.brandPrimary};
+  }
+`
+
+const BasePlusButtonDark = styled(BaseButton)`
+  background-color: ${(props) => props.theme.colors.white};
+  height: 50px;
+  color: ${(props) => props.theme.colors.black};
+  border-color: ${(props) => props.theme.colors.black};
+  border-width: 4px;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 0px;
+  justify-content: center;
+  margin-top: 8px;
 
   &:hover,
   &:focus,
@@ -63,7 +111,7 @@ const BaseAccentButtonDark = styled(BaseButton)`
 
 const BaseTag = styled(BaseButton)`
   background-color: ${(props) => props.theme.colors.black};
-  color: ${(props) => props.theme.colors.wite};
+  color: ${(props) => props.theme.colors.white};
   border-color: ${(props) => props.theme.colors.white};
   border: 3px solid ${(props) => props.theme.colors.grey};
   border-radius: 20px;
@@ -75,6 +123,25 @@ const BaseTag = styled(BaseButton)`
   &:focus,
   &:active {
     color: ${(props) => props.theme.colors.white};
+    background-color: transparent;
+    border: 3px solid ${(props) => props.theme.colors.lightGrey};
+  }
+`
+
+const BaseTagLight = styled(BaseButton)`
+  background-color: ${(props) => props.theme.colors.white};
+  color: ${(props) => props.theme.colors.black};
+  border-color: ${(props) => props.theme.colors.black};
+  border: 3px solid ${(props) => props.theme.colors.black};
+  border-radius: 20px;
+  padding: 8px 20px;
+  margin-right: 10px;
+  font-size: 14px;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: ${(props) => props.theme.colors.black};
     background-color: transparent;
     border: 3px solid ${(props) => props.theme.colors.lightGrey};
   }
@@ -100,6 +167,14 @@ export function AccentButton(props) {
             <>
               {props.title} <Search size={22} />
             </>
+          ) : props.icon === 'upload' ? (
+            <>
+              {props.title} <Upload size={22} />
+            </>
+          ) : props.icon === 'plus' ? (
+            <>
+              {props.title} <Plus size={22} />
+            </>
           ) : (
             props.title
           )}
@@ -113,10 +188,34 @@ export function AccentButton(props) {
   )
 }
 
+export function PlusButton(props) {
+  return (
+    <>
+      {props.variant === 'dark' ? (
+        <BasePlusButtonDark className="brand-button brand-button--plus-dark" variant="secondary">
+          <Plus size={22} />
+        </BasePlusButtonDark>
+      ) : (
+        <BasePlusButton className="brand-button brand-button--plus" variant="secondary">
+          <Plus size={22} color="white" />
+        </BasePlusButton>
+      )}
+    </>
+  )
+}
+
 export function Tag(props) {
   return (
-    <BaseTag className="brand-button brand-button--tag" variant="secondary">
-      {props.title}
-    </BaseTag>
+    <>
+      {props.variant === 'light' ? (
+        <BaseTagLight className="brand-button brand-button--tag" variant="secondary">
+          {props.title}
+        </BaseTagLight>
+      ) : (
+        <BaseTag className="brand-button brand-button--tag" variant="secondary">
+          {props.title}
+        </BaseTag>
+      )}
+    </>
   )
 }
