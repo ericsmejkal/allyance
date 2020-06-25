@@ -13,11 +13,9 @@ const ReportCaseContainer = styled.div`
 
 const CASES = gql`
   {
-    incidents {
-      tags {
-        id
-        content
-      }
+    tags {
+      id
+      content
     }
   }
 `
