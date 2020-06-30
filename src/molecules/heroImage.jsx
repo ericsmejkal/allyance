@@ -41,7 +41,7 @@ const PhoneContent = styled.div`
 
 export function HeroImage(props) {
   return (
-    <Box display="flex" marginTop={240}>
+    <Box display="flex" marginTop={120}>
       <PhoneContainer>
         <PhoneContent>
           <H5>15 mins ago</H5>

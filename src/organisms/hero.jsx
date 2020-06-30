@@ -29,7 +29,7 @@ const HeroContainer = styled.main`
 
 const CustomOverlay = styled.div`
   background: linear-gradient(180deg, #030c07 0%, #2d2d2d 100%);
-  height: 800px;
+  height: 672px;
   width: 100%;
   position: absolute;
   opacity: 0.975;
@@ -39,7 +39,7 @@ const CustomOverlay = styled.div`
 `
 
 const CustomBackground = styled.div`
-  height: 800px;
+  height: 672px;
   width: 100%;
   position: absolute;
   z-index: 1;
