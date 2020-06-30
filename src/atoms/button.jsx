@@ -4,8 +4,9 @@ import { Search, Upload, Plus } from 'react-feather'
 import { darken } from 'polished'
 
 const BaseButton = styled.button`
-  padding: 0.6rem 2rem;
-  font-size: 1.2rem;
+  padding: 0px 24px;
+  height: 48px;
+  font-size: 16px;
   background-color: ${(props) => props.theme.colors.brandPrimary};
   border: 4px solid ${(props) => props.theme.colors.brandPrimary};
   border-radius: 0;
@@ -14,12 +15,14 @@ const BaseButton = styled.button`
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   cursor: pointer;
   outline: none;
+  display: flex;
+  align-items: center;
 
   &:hover,
   &:focus,
   &:active {
     background-color: ${(props) => darken(0.1, props.theme.colors.darkGrey)};
-    border-color: #fff;
+    border-color: ${(props) => props.theme.colors.white};
     color: ${(props) => props.theme.colors.brandPrimary};
   }
 `
@@ -30,6 +33,7 @@ const BaseAccentButton = styled(BaseButton)`
   border-color: ${(props) => props.theme.colors.white};
   border-width: 4px;
   margin-top: ${(props) => (props.noMargin === 'true' ? '0px' : '40px')};
+  margin-right: ${(props) => (props.noMargin === 'true' ? '0px' : '16px')};
 
   &:hover,
   &:focus,
@@ -46,6 +50,7 @@ const BaseAccentButtonDark = styled(BaseButton)`
   border-color: ${(props) => props.theme.colors.black};
   border-width: 4px;
   margin-top: ${(props) => (props.noMargin === 'true' ? '40px' : '10px')};
+  margin-right: ${(props) => (props.noMargin === 'true' ? '0px' : '16px')};
   display: flex;
 
   &:hover,
@@ -57,22 +62,21 @@ const BaseAccentButtonDark = styled(BaseButton)`
   }
 
   svg {
-    margin-left: 10px;
+    margin-left: 8px;
   }
 `
 
 const BasePlusButton = styled(BaseButton)`
   background-color: initial;
-  height: 50px;
+  height: 48px;
   color: ${(props) => props.theme.colors.white};
   border-color: ${(props) => props.theme.colors.white};
   border-width: 4px;
-  margin-left: 20px;
+  margin-left: 16px;
   display: flex;
   align-items: center;
   padding: 0;
   justify-content: center;
-  margin-top: 8px;
   min-width: 160px;
 
   &:hover,
@@ -86,16 +90,15 @@ const BasePlusButton = styled(BaseButton)`
 
 const BasePlusButtonDark = styled(BaseButton)`
   background-color: ${(props) => props.theme.colors.white};
-  height: 50px;
+  height: 48px;
   color: ${(props) => props.theme.colors.black};
   border-color: ${(props) => props.theme.colors.black};
   border-width: 4px;
-  margin-left: 20px;
+  margin-left: 16px;
   display: flex;
   align-items: center;
   padding: 0px;
   justify-content: center;
-  margin-top: 8px;
   min-width: 160px;
 
   &:hover,
@@ -107,26 +110,26 @@ const BasePlusButtonDark = styled(BaseButton)`
   }
 
   svg {
-    margin-left: 10px;
+    margin-left: 8px;
   }
 `
 
 const BaseTag = styled(BaseButton)`
   background-color: ${(props) => props.theme.colors.black};
+  font-size: 16px;
   color: ${(props) => props.theme.colors.white};
   border-color: ${(props) => props.theme.colors.white};
-  border: 3px solid ${(props) => props.theme.colors.grey};
-  border-radius: 20px;
-  padding: 8px 20px;
-  margin-right: 10px;
-  font-size: 14px;
+  border: 4px solid ${(props) => props.theme.colors.grey};
+  border-radius: 24px;
+  padding: 8px 24px;
+  margin-right: 8px;
 
   &:hover,
   &:focus,
   &:active {
     color: ${(props) => props.theme.colors.white};
     background-color: transparent;
-    border: 3px solid ${(props) => props.theme.colors.lightGrey};
+    border: 4px solid ${(props) => props.theme.colors.lightGrey};
   }
 `
 
@@ -134,18 +137,18 @@ const BaseTagLight = styled(BaseButton)`
   background-color: ${(props) => props.theme.colors.white};
   color: ${(props) => props.theme.colors.black};
   border-color: ${(props) => props.theme.colors.black};
-  border: 3px solid ${(props) => props.theme.colors.black};
-  border-radius: 20px;
-  padding: 8px 20px;
-  margin-right: 10px;
-  font-size: 14px;
+  border: 4px solid ${(props) => props.theme.colors.black};
+  border-radius: 24px;
+  padding: 8px 24px;
+  margin-right: 8px;
+  font-size: 16px;
 
   &:hover,
   &:focus,
   &:active {
     color: ${(props) => props.theme.colors.black};
     background-color: transparent;
-    border: 3px solid ${(props) => props.theme.colors.lightGrey};
+    border: 4px solid ${(props) => props.theme.colors.lightGrey};
   }
 `
 

@@ -21,7 +21,7 @@ const PhoneContainer = styled.div`
 const PhoneContent = styled.div`
   position: absolute;
   bottom: 0;
-  padding: 20px;
+  padding: 24px;
   width: 100%;
   border-radius: 30px;
   background-color: ${(props) => props.theme.colors.darkGrey};
@@ -31,7 +31,7 @@ const PhoneContent = styled.div`
   }
   H5 {
     color: ${(props) => props.theme.colors.brandPrimary};
-    padding-bottom: 5px;
+    padding-bottom: 6px;
   }
   p {
     color: ${(props) => props.theme.colors.white};

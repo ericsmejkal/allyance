@@ -21,8 +21,8 @@ const FeedControls = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 30px;
-  padding-top: 30px;
+  padding-bottom: 32px;
+  padding-top: 32px;
 `
 
 const CASES = gql`

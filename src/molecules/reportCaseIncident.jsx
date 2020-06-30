@@ -21,32 +21,32 @@ class ReportCaseIncident extends React.Component {
           stepNumber={this.props.currentStep}
         />
         <form>
-          <Flex mt={3} ml={-3} pb={4} mr={-3}>
-            <Box width={1} pl={3} pr={3}>
+          <Flex mt={3} ml={-2} pb={4} mr={-2} alignItems="flex-end">
+            <Box width={1} pl={2} pr={2}>
               <Input
                 placeholder="In what zip code was the incident?"
                 rowTitle="Add the location"
                 type="number"
               />
             </Box>
-            <Box width={1} mt={4} pl={3} pr={3}>
+            <Box width={1} mt={4} pl={2} pr={2}>
               <Input placeholder="Was there a specific neighborhood or area?" />
             </Box>
           </Flex>
-          <Flex mt={3} ml={-3} pb={3} mr={-3}>
-            <Box width={1} pl={3} pr={3}>
+          <Flex mt={3} ml={-2} pb={3} mr={-2} alignItems="flex-end">
+            <Box width={1} pl={2} pr={2}>
               <Input
                 placeholder="What was the date of the incident?"
                 rowTitle="Add any details your have"
                 type="date"
               />
             </Box>
-            <Box width={1} mt={4} pl={3} pr={3}>
+            <Box width={1} mt={4} pl={2} pr={2}>
               <Input placeholder="Describe the incident in 40 characters." maxLength="40" />
             </Box>
           </Flex>
-          <Flex mt={1} ml={-3} pb={3} mr={-3}>
-            <Box width={1} pl={3} pr={3}>
+          <Flex mt={1} ml={-2} pb={3} mr={-2} alignItems="flex-end">
+            <Box width={1} pl={2} pr={2}>
               <TextAreaInput placeholder="Describe what happened in as much detail as possible." />
             </Box>
           </Flex>

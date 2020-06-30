@@ -7,10 +7,9 @@ import { Paragraph, H4 } from '../atoms/text'
 import { PlusButton } from '../atoms/button'
 
 const BaseInput = styled.input`
-  height: 50px;
+  height: 48px;
   padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  margin-top: 10px;
+  font-size: 16px;
   line-height: 1.5;
   border-radius: 0;
   color: ${(props) => props.theme.colors.black};
@@ -21,7 +20,7 @@ const BaseInput = styled.input`
   outline: none;
 
   &.input--email {
-    height: 50px;
+    height: 48px;
     border-right: none;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -39,9 +38,9 @@ const BaseInput = styled.input`
 `
 
 const BaseInputLight = styled.input`
-  height: 50px;
+  height: 48px;
   padding: 0.5rem 1rem;
-  font-size: 1.2rem;
+  font-size: 16px;
   line-height: 1.5;
   border-radius: 0;
   color: ${(props) => props.theme.colors.white};
@@ -52,7 +51,7 @@ const BaseInputLight = styled.input`
   outline: none;
 
   &.input--email {
-    height: 50px;
+    height: 48px;
     border-right: none;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -70,10 +69,9 @@ const BaseInputLight = styled.input`
 `
 
 const TextArea = styled.input`
-  height: 50px;
+  height: 48px;
   padding: 1.4rem 1rem 120px 1rem;
-  font-size: 1.2rem;
-  margin-top: 10px;
+  font-size: 16px;
   line-height: 1.5;
   border-radius: 0;
   color: ${(props) => props.theme.colors.black};
@@ -84,7 +82,7 @@ const TextArea = styled.input`
   outline: none;
 
   &.input--email {
-    height: 50px;
+    height: 48px;
     border-right: none;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
@@ -103,16 +101,12 @@ const TextArea = styled.input`
 const LinkContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  height: 50px;
-  margin-bottom: 25px;
 `
 
 const Link = styled.input`
-  height: 50px;
+  height: 48px;
   padding: 0.5rem 1rem;
-  font-size: 1.2rem;
-  margin-top: 8px;
-  margin-bottom: 15px;
+  font-size: 16px;
   line-height: 1.5;
   border-radius: 0;
   color: ${(props) => props.theme.colors.black};
@@ -124,15 +118,7 @@ const Link = styled.input`
 
   p {
     padding: 0;
-    margin: 20px 0 0 0;
-    margin-top: 20px;
-  }
-
-  &.input--email {
-    height: 50px;
-    border-right: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    margin-bottom: 0;
   }
 
   &::placeholder {
@@ -144,12 +130,16 @@ const Link = styled.input`
   &:active {
     border: 4px solid ${(props) => props.theme.colors.grey};
   }
+
+  &:last-of-type {
+    margin-bottom: 0px;
+  }
 `
 
 const Search = styled.input`
-  height: 50px;
+  height: 48px;
   padding: 0.5rem 1rem;
-  font-size: 1.2rem;
+  font-size: 16px;
   line-height: 1.5;
   border-radius: 0;
   color: ${(props) => props.theme.colors.black};
@@ -161,13 +151,6 @@ const Search = styled.input`
   border-right: 0px;
   width: 100%;
   outline: none;
-
-  &.input--email {
-    height: 50px;
-    border-right: none;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
 
   &::placeholder {
     color: ${(props) => props.theme.colors.grey};
@@ -191,7 +174,7 @@ const dropdownStyles = {
     color: '#030C07',
     padding: '15px 20px',
     backgroundColor: '#fff',
-    fontSize: '1.2rem',
+    fontSize: '16px',
     marginTop: '0px',
     lineHeight: '1.5',
     '&:hover': {
@@ -205,20 +188,21 @@ const dropdownStyles = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    height: '50px',
-    marginTop: '10px',
-    fontSize: '1.2rem',
+    height: '48px',
+    marginTop: '8px',
+    fontSize: '16px',
     lineHeight: '1.5',
   }),
   placeholder: () => ({
-    paddingLeft: '10px',
-    fontSize: '1.2rem',
+    paddingLeft: '8px',
+    fontSize: '16px',
     lineHeight: '1.5',
     color: '#030C07',
   }),
   dropdownIndicator: () => ({
     color: '#030C07',
     padding: '10px 10px 4px',
+    cursor: 'pointer',
   }),
   menuList: () => ({
     border: '4px solid #000',
@@ -234,7 +218,7 @@ const dropdownStyles = {
 export function Input(props) {
   return (
     <>
-      {props.rowTitle ? <H4 style={{ lineHeight: '32px' }}>{props.rowTitle}</H4> : null}
+      {props.rowTitle ? <H4 style={{ marginBottom: '16px' }}>{props.rowTitle}</H4> : null}
       <BaseInput
         type={props.type}
         placeholder={props.placeholder}
@@ -278,7 +262,7 @@ export function SearchInput(props) {
 export function DropdownInput(props) {
   return (
     <>
-      {props.rowTitle ? <H4 style={{ lineHeight: '32px' }}>{props.rowTitle}</H4> : null}
+      {props.rowTitle ? <H4 style={{ marginBottom: '16px' }}>{props.rowTitle}</H4> : null}
       <Select options={props.options} styles={dropdownStyles} placeholder={props.placeholder} />
     </>
   )
@@ -287,16 +271,12 @@ export function DropdownInput(props) {
 export function LinkInput(props) {
   return (
     <>
-      {props.rowTitle ? <H4 style={{ lineHeight: '32px' }}>{props.rowTitle}</H4> : null}
+      {props.rowTitle ? <H4 style={{ marginBottom: '16px' }}>{props.rowTitle}</H4> : null}
       {props.title ? (
-        <Paragraph style={{ lineHeight: '20px', margin: '0' }}>{props.title}</Paragraph>
+        <Paragraph style={{ marginBottom: '4px', marginTop: '8px' }}>{props.title}</Paragraph>
       ) : null}
       <LinkContainer>
-        <Link
-          type="text"
-          placeholder={props.placeholder}
-          className={props.email ? 'input--email' : ''}
-        />
+        <Link type="text" placeholder={props.placeholder} />
         {/* WIP - Need to create functionality of duplicating the link container above onClick */}
         <PlusButton icon="plus" variant="dark" title="Add More" />
       </LinkContainer>

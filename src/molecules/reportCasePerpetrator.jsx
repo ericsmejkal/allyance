@@ -34,30 +34,30 @@ class ReportCasePerpetrator extends React.Component {
           stepNumber={this.props.currentStep}
         />
         <form>
-          <Flex mt={3} ml={-3} pb={4} mr={-3}>
-            <Box width={1} pl={3} pr={3}>
+          <Flex mt={3} ml={-2} pb={4} mr={-2} alignItems="flex-end">
+            <Box width={1} pl={2} pr={2}>
               <Input placeholder="Do you know their first name?" rowTitle="Add their name" />
             </Box>
-            <Box width={1} mt={4} pl={3} pr={3}>
+            <Box width={1} mt={4} pl={2} pr={2}>
               <Input placeholder="Do you know their last name?" />
             </Box>
           </Flex>
-          <Flex mt={3} ml={-3} pb={3} mr={-3}>
-            <Box width={1} pl={3} pr={3}>
+          <Flex mt={3} ml={-2} pb={3} mr={-2} alignItems="flex-end">
+            <Box width={1} pl={2} pr={2}>
               <Input
                 placeholder="Did they have an identification number / badge?"
                 rowTitle="Add any details your have"
               />
             </Box>
-            <Box width={1} mt={4} pl={3} pr={3}>
+            <Box width={1} mt={4} pl={2} pr={2} alignItems="flex-end">
               <DropdownInput options={raceOptions} placeholder="What is their racial identity?" />
             </Box>
           </Flex>
-          <Flex mt={1} ml={-3} pb={3} mr={-3}>
-            <Box width={1} pl={3} pr={3}>
+          <Flex mt={1} ml={-2} pb={3} mr={-2}>
+            <Box width={1} pl={2} pr={2}>
               <Uploader uploadType="images" uploadTitle="perpetrator" />
             </Box>
-            <Box width={1} pl={3} pr={3}>
+            <Box width={1} pl={2} pr={2}>
               <Input placeholder="Describe what they did in 40 characters." maxLength="40" />
             </Box>
           </Flex>

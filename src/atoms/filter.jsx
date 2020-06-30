@@ -18,7 +18,7 @@ const FilterContainer = styled.div`
     }
 
     svg {
-      margin-left: 10px;
+      margin-left: 8px;
     }
   }
 `

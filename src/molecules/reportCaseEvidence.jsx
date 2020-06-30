@@ -29,18 +29,18 @@ class ReportCaseEvidence extends React.Component {
           stepNumber={this.props.currentStep}
         />
         <form>
-          <Flex mt="14px">
+          <Flex mt={3}>
             <H4>Upload evidence</H4>
           </Flex>
-          <Flex mt={0} ml={-3} pb={4} mr={-3}>
-            <Box width={1} pl={3} pr={3}>
+          <Flex mt={3} ml={-2} pb={4} mr={-2} alignItems="flex-end">
+            <Box width={1} pl={2} pr={2}>
               <Uploader uploadType="images" uploadTitle="incident" />
             </Box>
-            <Box width={1} pl={3} pr={3}>
+            <Box width={1} pl={2} pr={2}>
               <Uploader uploadType="videos" uploadTitle="incident" />
             </Box>
           </Flex>
-          <Flex mt={3} pb={4}>
+          <Flex mt={3} pb={4} alignItems="flex-end">
             <Box width={1}>
               <LinkInput
                 placeholder="Add links to any additional video content that you've seen."
@@ -60,16 +60,35 @@ class ReportCaseEvidence extends React.Component {
               />
             </Box>
           </Flex>
-
-          <Flex mt={3} pb={3} flexDirection="column">
+          <Flex mt={3} pb={4} flexDirection="column">
             <Box width={1}>
               <H4>Case status</H4>
             </Box>
-            <Box width={1} display="flex" justifyContent="space-between">
-              <AccentButton title="Active Investigation" variant="dark" noMargin="true" />
-              <AccentButton title="Victim Won Case" variant="dark" noMargin="true" />
-              <AccentButton title="Defendant Won Case" variant="dark" noMargin="true" />
-              <AccentButton title="No Investigation" variant="dark" noMargin="true" />
+            <Box width={1} display="flex" justifyContent="flex-start">
+              <AccentButton
+                title="Active Investigation"
+                variant="dark"
+                noMargin="true"
+                marginRight="true"
+              />
+              <AccentButton
+                title="Victim Won Case"
+                variant="dark"
+                noMargin="true"
+                marginRight="true"
+              />
+              <AccentButton
+                title="Defendant Won Case"
+                variant="dark"
+                noMargin="true"
+                marginRight="true"
+              />
+              <AccentButton
+                title="No Investigation"
+                variant="dark"
+                noMargin="true"
+                marginRight="true"
+              />
             </Box>
           </Flex>
         </form>
