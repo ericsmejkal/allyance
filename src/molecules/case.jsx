@@ -54,7 +54,7 @@ const CaseFeedOverlay = styled.div`
 `
 
 const CaseFeedTitle = styled.div`
-  padding: 20px;
+  padding: 24px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -63,7 +63,7 @@ const CaseFeedTitle = styled.div`
   h5 {
     color: #fff;
     width: 100%;
-    padding-bottom: 5px;
+    padding-bottom: 4px;
     transition: 0.2s ease-in-out;
 
     :hover {
@@ -73,13 +73,13 @@ const CaseFeedTitle = styled.div`
 
   svg {
     border: 2px solid #fff;
-    border-radius: 20px;
+    border-radius: 24px;
     padding: 8px;
     opacity: 0.6;
     fill: ${(props) => props.theme.colors.white};
     transition: 0.2s ease-in-out;
     cursor: pointer;
-    margin-bottom: 5px;
+    margin-bottom: 4px;
 
     &:hover {
       opacity: 1;
@@ -92,7 +92,7 @@ const CaseFeedMetaContainer = styled.div`
   width: 100%;
   background-color: ${(props) => props.theme.colors.darkGrey};
   height: auto;
-  padding: 20px 20px;
+  padding: 24px 24px;
   position: absolute:
   bottom: 0;
   left: 0;
@@ -110,14 +110,14 @@ const CaseLogistics = styled.div`
   h6 {
     color: white;
     font-size: 16px;
-    margin-bottom: 20px;
+    margin-bottom: 24px;
   }
 `
 
 const CaseStatus = styled.div`
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 24px;
+  left: 24px;
   z-index: 10;
 `
 

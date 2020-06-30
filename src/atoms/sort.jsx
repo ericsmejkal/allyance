@@ -15,7 +15,7 @@ const SortContainer = styled.div`
     }
 
     svg {
-      margin-left: 20px;
+      margin-left: 16px;
     }
   }
 `
@@ -25,7 +25,7 @@ export function Sort(props) {
     <SortContainer>
       <H2>
         Most Recent Cases
-        <ChevronDown size={20} />
+        <ChevronDown size={22} />
       </H2>
     </SortContainer>
   )

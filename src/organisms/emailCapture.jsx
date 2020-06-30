@@ -9,7 +9,7 @@ import { MailchimpForm } from '../molecules/mailchimpForm'
 const SignUpContainer = styled.div`
   background-color: ${(props) => props.theme.colors.darkGrey};
   width: 100%;
-  padding: 70px 0;
+  padding: 64px 0;
   margin-top: 100px;
   background-size: cover;
 

@@ -5,6 +5,7 @@ import HomePage from './pages/homePage'
 import BrowseCasesPage from './pages/browseCasesPage'
 import ReportCasePage from './pages/reportCasePage'
 import CaseDetailPage from './pages/caseDetailPage'
+import NoMatch from './pages/noMatch'
 
 import { Navigation } from './organisms/navigation'
 import { Footer } from './organisms/footer'
@@ -25,6 +26,9 @@ const Routes = () => {
         </Route>
         <Route path="/cases/:id">
           <CaseDetailPage />
+        </Route>
+        <Route path="*">
+          <NoMatch />
         </Route>
       </Switch>
       <Footer />

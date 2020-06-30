@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 import { LightLogo } from '../atoms/logo'
 import { Container } from '../atoms/container'
-import { H4 } from '../atoms/text'
+import { H5 } from '../atoms/text'
 
 const NavigationContainer = styled.div`
   background: transparent;
@@ -40,10 +40,9 @@ const LinkBox = styled.div`
   justify-content: flex-end;
   align-items: center;
 
-  H4 {
+  H5 {
     color: ${(props) => props.theme.colors.white};
-    padding-right: 50px;
-    font-size: 20px;
+    padding-right: 48px;
     transition: 0.2s ease-in-out;
 
     :hover {
@@ -53,7 +52,7 @@ const LinkBox = styled.div`
 `
 
 const IconBox = styled.div`
-  padding-left: 20px;
+  padding-left: 24px;
 
   svg {
     cursor: pointer;
@@ -79,10 +78,10 @@ export function Navigation(props) {
           <SplitRight>
             <LinkBox>
               <Link to="/browse-cases">
-                <H4>Browse cases</H4>
+                <H5>Browse cases</H5>
               </Link>
               <Link to="/report-a-case">
-                <H4>Report A Case</H4>
+                <H5>Report A Case</H5>
               </Link>
             </LinkBox>
             <SocialBox width={[1, 1, 1 / 2, 2 / 5]}>

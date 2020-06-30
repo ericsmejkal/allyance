@@ -11,7 +11,7 @@ const FormContainer = styled.div`
 
 const EmailInput = styled(Input)`
   border-right: none;
-  border: 4px solid #fff;
+  border: 4px solid ${(props) => props.theme.colors.white};
   background: transparent;
   background-color: transparent;
   border-radius: 0;
@@ -19,8 +19,8 @@ const EmailInput = styled(Input)`
 `
 
 const SubmitButton = styled(Button)`
-  height: calc(1.8em + 1rem + 2px);
-  border: 4px solid #fff;
+  height: 48px;
+  border: 4px solid ${(props) => props.theme.colors.white};
   background: transparent;
   border-radius: 0;
 `

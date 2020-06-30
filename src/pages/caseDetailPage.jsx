@@ -15,7 +15,7 @@ const incidents = [
 const PageContainer = styled.div`
   background-color: ${(props) => props.theme.colors.background};
   color: ${(props) => props.theme.colors.black};
-  height: 300px;
+  height: 100%;
 `
 
 function CaseDetailPage(props) {

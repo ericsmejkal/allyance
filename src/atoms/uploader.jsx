@@ -5,9 +5,9 @@ import { Upload } from 'react-feather'
 
 const CustomButton = styled.div`
   background-color: ${(props) => props.theme.colors.white};
-  height: 50px;
+  height: 48px;
   padding: 0.5rem 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 1.5;
   width: 100%;
   color: ${(props) => props.theme.colors.black};
@@ -15,7 +15,6 @@ const CustomButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 10px;
   cursor: pointer;
   transition: 0.2s ease-in-out;
 

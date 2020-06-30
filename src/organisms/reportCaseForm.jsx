@@ -11,12 +11,12 @@ import ReportCaseTags from '../molecules/reportCaseTags'
 const ReportCaseContainer = styled.div`
   width: 100%;
   height: auto;
-  padding: 35px 0 120px;
+  padding: 32px 0 120px;
   position: relative;
 `
 
 const NextButton = styled.div`
-  font-size: 1.2rem;
+  font-size: 16px;
   border: 4px solid ${(props) => props.theme.colors.black};
   color: ${(props) => props.theme.colors.black};
   background-color: ${(props) => props.theme.colors.white};
@@ -24,8 +24,8 @@ const NextButton = styled.div`
   transition: 0.2s ease-in-out;
   align-items: center;
   justify-content: center;
-  padding: 10px; 30px;
-  width: 100px;
+  padding: 8px 32px;
+  width: 120px;
   cursor: pointer;
   position: absolute;
   right: 0;
@@ -41,7 +41,7 @@ const NextButton = styled.div`
 `
 
 const BackButton = styled.div`
-  font-size: 1.2rem;
+  font-size: 16px;
   transition: 0.2s ease-in-out;
   border: 4px solid ${(props) => props.theme.colors.black};
   color: ${(props) => props.theme.colors.black};
@@ -49,8 +49,8 @@ const BackButton = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px; 30px;
-  width: 100px;
+  padding: 8px 32px;
+  width: 120px;
   cursor: pointer;
   position: absolute;
   left: 0;
@@ -67,7 +67,7 @@ const BackButton = styled.div`
 
 const ReportCaseButtons = styled.div`
   display: flex;
-  margin-top: 60px;
+  margin-top: 40px;
   justify-content: space-between;
 `
 

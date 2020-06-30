@@ -4,10 +4,10 @@ import styled from '@emotion/styled'
 const CaseStatus = styled.div`
   background-color: ${(props) => props.theme.colors.black};
   color: ${(props) => props.theme.colors.white};
-  border: 3px solid ${(props) => props.theme.colors.black};
-  border-radius: 20px;
-  padding: 2px 20px;
-  margin-right: 10px;
+  border: 4px solid ${(props) => props.theme.colors.black};
+  border-radius: 24px;
+  padding: 0px 24px;
+  margin-right: 16px;
   font-size: 16px;
   transition: 0.2s ease-in-out;
   cursor: pointer;
@@ -17,7 +17,7 @@ const CaseStatus = styled.div`
   &:active {
     color: ${(props) => props.theme.colors.success};
     background-color: ${(props) => props.theme.colors.black};
-    border: 3px solid ${(props) => props.theme.colors.black};
+    border: 4px solid ${(props) => props.theme.colors.black};
   }
 `
 

@@ -6,6 +6,8 @@ import Mailchimp from 'react-mailchimp-form'
 
 const CustomForm = styled.div`
   display: flex;
+  align-items: flex-end;
+  justify-content: space-between
   max-width: 500px;
 
   form {
@@ -15,9 +17,9 @@ const CustomForm = styled.div`
   }
 
   input {
-    height: calc(1.8em + 1rem + 2px);
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
+    height: 48px;
+    padding:  1rem;
+    font-size: 16px;
     line-height: 1.5;
     border-radius: 0;
     color: ${(props) => props.theme.colors.white};
@@ -27,6 +29,8 @@ const CustomForm = styled.div`
     background-clip: padding-box;
     border: 4px solid ${(props) => props.theme.colors.white};
     width: 80%;
+    display: inline-flex;
+    align-items: center;
     outline: none;
 
     &.input--email {
@@ -46,9 +50,9 @@ const CustomForm = styled.div`
   }
 
   button {
-    height: calc(1.8em + 1rem + 2px);
-    padding: 0.5rem 1rem;
-    font-size: 1.2rem;
+    height: 48px;
+    padding:  1rem;
+    font-size: 16px;
     line-height: 1.5;
     border-radius: 0;
     color: ${(props) => props.theme.colors.white};
@@ -63,6 +67,9 @@ const CustomForm = styled.div`
     outline: none;
     cursor: pointer;
     width: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 
     &:hover,
     &:focus,

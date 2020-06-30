@@ -15,15 +15,15 @@ const HeroContainer = styled.main`
   z-index: 3;
 
   H1 {
-    color: #fff;
-    min-height: 190px;
+    color: ${(props) => props.theme.colors.white};
+    min-height: 192px;
 
     @media screen and (max-width: 1000px) {e
-      min-height: 130px;
+      min-height: 128px;
     }
   }
   H3 {
-    color: #959595;
+    color: ${(props) => props.theme.colors.lightestGrey};
   }
 `
 
@@ -51,18 +51,18 @@ const SmallHeroContainer = styled.main`
   display: flex;
   align-items: center;
   padding: 9% 0 10%;
-  margin-bottom: -100px;
+  margin-bottom: -104px;
   background: linear-gradient(180deg, #030c07 0%, #2d2d2d 100%);
   width: 100%;
 
   H1 {
-    color: #fff;
-    max-width: 450px;
-    line-height: 50px;
-    margin-top: 30px;
+    color: ${(props) => props.theme.colors.white};
+    max-width: 448px;
+    line-height: 48px;
+    margin-top: 32px;
 
     @media screen and (max-width: 1000px) {
-      min-height: 130px;
+      min-height: 128px;
     }
   }
   H4 {
