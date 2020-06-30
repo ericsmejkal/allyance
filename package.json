@@ -16,12 +16,14 @@
     "polished": "^3.2.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-dropzone": "^11.0.1",
     "react-feather": "^2.0.8",
     "react-mailchimp-form": "^1.0.2",
     "react-meta-tags": "^0.7.4",
     "react-rotating-text": "^1.4.1",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^3.4.1"
+    "react-scripts": "^3.4.1",
+    "react-select": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

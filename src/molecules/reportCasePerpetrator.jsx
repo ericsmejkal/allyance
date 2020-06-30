@@ -3,13 +3,26 @@ import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/emotion'
 
 import { ReportCaseTitle } from '../atoms/title'
-import { Input } from '../atoms/input'
+import { Input, DropdownInput } from '../atoms/input'
+import Uploader from '../atoms/uploader'
 
 const ReportCaseContainer = styled.div`
   width: 100%;
 `
 
+const raceOptions = [
+  { value: 'black', label: 'Black' },
+  { value: 'asian', label: 'Asian' },
+  { value: 'nativeAmerican', label: 'Native American / Indigenous' },
+  { value: 'pacificIslander', label: 'Pacific Islander' },
+  { value: 'latinX', label: 'Latinx' },
+  { value: 'white', label: 'White' },
+]
+
 class ReportCasePerpetrator extends React.Component {
+  onDrop = (acceptedFiles) => {
+    console.log(acceptedFiles)
+  }
   render() {
     if (this.props.currentStep !== 2) {
       return null
@@ -32,20 +45,20 @@ class ReportCasePerpetrator extends React.Component {
           <Flex mt={3} ml={-3} pb={3} mr={-3}>
             <Box width={1} pl={3} pr={3}>
               <Input
-                placeholder="Did they have an identification number?"
+                placeholder="Did they have an identification number / badge?"
                 rowTitle="Add any details your have"
               />
             </Box>
             <Box width={1} mt={4} pl={3} pr={3}>
-              <Input placeholder="What was their racial identity?" />
+              <DropdownInput options={raceOptions} placeholder="What is their racial identity?" />
             </Box>
           </Flex>
           <Flex mt={1} ml={-3} pb={3} mr={-3}>
             <Box width={1} pl={3} pr={3}>
-              <Input placeholder="Upload any images of this person." />
+              <Uploader uploadType="images" uploadTitle="perpetrator" />
             </Box>
             <Box width={1} pl={3} pr={3}>
-              <Input placeholder="Describe what they did in 20 characters." />
+              <Input placeholder="Describe what they did in 40 characters." maxLength="40" />
             </Box>
           </Flex>
         </form>

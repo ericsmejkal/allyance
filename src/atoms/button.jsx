@@ -70,9 +70,10 @@ const BasePlusButton = styled(BaseButton)`
   margin-left: 20px;
   display: flex;
   align-items: center;
-  padding: 0 10px 0 0px;
+  padding: 0;
   justify-content: center;
   margin-top: 8px;
+  min-width: 160px;
 
   &:hover,
   &:focus,
@@ -92,9 +93,10 @@ const BasePlusButtonDark = styled(BaseButton)`
   margin-left: 20px;
   display: flex;
   align-items: center;
-  padding: 0 10px 0 0px;
+  padding: 0px;
   justify-content: center;
   margin-top: 8px;
+  min-width: 160px;
 
   &:hover,
   &:focus,
@@ -193,11 +195,11 @@ export function PlusButton(props) {
     <>
       {props.variant === 'dark' ? (
         <BasePlusButtonDark className="brand-button brand-button--plus-dark" variant="secondary">
-          <Plus size={22} />
+          {props.title} <Plus size={22} />
         </BasePlusButtonDark>
       ) : (
         <BasePlusButton className="brand-button brand-button--plus" variant="secondary">
-          <Plus size={22} color="white" />
+          {props.title} <Plus size={22} color="white" />
         </BasePlusButton>
       )}
     </>
