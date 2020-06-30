@@ -50,7 +50,7 @@ const CustomBackground = styled.div`
 const SmallHeroContainer = styled.main`
   display: flex;
   align-items: center;
-  padding: 12% 0 10%;
+  padding: 9% 0 10%;
   margin-bottom: -100px;
   background: linear-gradient(180deg, #030c07 0%, #2d2d2d 100%);
   width: 100%;

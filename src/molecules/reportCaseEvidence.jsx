@@ -6,6 +6,7 @@ import { ReportCaseTitle } from '../atoms/title'
 import { H4 } from '../atoms/text'
 import { Input, LinkInput } from '../atoms/input'
 import { AccentButton } from '../atoms/button'
+import Uploader from '../atoms/uploader'
 
 const ReportCaseContainer = styled.div`
   width: 100%;
@@ -28,11 +29,22 @@ class ReportCaseEvidence extends React.Component {
           stepNumber={this.props.currentStep}
         />
         <form>
+          <Flex mt="14px">
+            <H4>Upload evidence</H4>
+          </Flex>
+          <Flex mt={0} ml={-3} pb={4} mr={-3}>
+            <Box width={1} pl={3} pr={3}>
+              <Uploader uploadType="images" uploadTitle="incident" />
+            </Box>
+            <Box width={1} pl={3} pr={3}>
+              <Uploader uploadType="videos" uploadTitle="incident" />
+            </Box>
+          </Flex>
           <Flex mt={3} pb={4}>
             <Box width={1}>
               <LinkInput
-                placeholder="Add a link to any video content that you've seen."
-                rowTitle="Add any evidence of the incident"
+                placeholder="Add links to any additional video content that you've seen."
+                rowTitle="Links to any evidence of the incident"
               />
               <LinkInput
                 placeholder="Do you know of any links to donation platforms?"
@@ -46,12 +58,6 @@ class ReportCaseEvidence extends React.Component {
                 placeholder="Add links to any posts that you've seen relating to this incident."
                 title="Social Posts"
               />
-            </Box>
-          </Flex>
-          <Flex mt={1} pb={3}>
-            <Box width={1 / 2}>
-              <H4>Upload evidence</H4>
-              <Input placeholder="Upload any images of this incident." />
             </Box>
           </Flex>
 

@@ -45,7 +45,7 @@ export const Base = css`
   }
 
   ::selection {
-    color: #000;
-    background: #fff;
+    color: #fff;
+    background: #000;
   }
 `

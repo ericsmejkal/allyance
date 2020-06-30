@@ -4,16 +4,31 @@ import { Box, Flex } from '@rebass/emotion'
 
 import { ReportCaseTitle } from '../atoms/title'
 import { Input, DropdownInput } from '../atoms/input'
+import Uploader from '../atoms/uploader'
 
 const ReportCaseContainer = styled.div`
   width: 100%;
 `
 
+const raceOptions = [
+  { value: 'black', label: 'Black' },
+  { value: 'latinX', label: 'Latinx' },
+  { value: 'asian', label: 'Asian' },
+  { value: 'nativeAmerican', label: 'Native American / Indigenous' },
+  { value: 'pacificIslander', label: 'Pacific Islander' },
+  { value: 'white', label: 'White' },
+]
+
 class ReportCaseVictim extends React.Component {
+  onDrop = (acceptedFiles) => {
+    console.log(acceptedFiles)
+  }
+
   render() {
     if (this.props.currentStep !== 1) {
       return null
     }
+
     return (
       <ReportCaseContainer>
         <ReportCaseTitle
@@ -31,18 +46,22 @@ class ReportCaseVictim extends React.Component {
           </Flex>
           <Flex mt={3} ml={-3} pb={3} mr={-3}>
             <Box width={1} pl={3} pr={3}>
-              <Input placeholder="What is their age?" rowTitle="Add any details you have" />
+              <Input
+                placeholder="What is their age?"
+                type="number"
+                rowTitle="Add any details you have"
+              />
             </Box>
             <Box width={1} mt={4} pl={3} pr={3}>
-              <DropdownInput placeholder="What is their racial identity?" />
+              <DropdownInput options={raceOptions} placeholder="What is their racial identity?" />
             </Box>
           </Flex>
           <Flex mt={1} ml={-3} pb={3} mr={-3}>
             <Box width={1} pl={3} pr={3}>
-              <Input placeholder="Upload any images of the victim." />
+              <Uploader uploadType="images" uploadTitle="victim" />
             </Box>
             <Box width={1} pl={3} pr={3}>
-              <Input placeholder="Describe the injustice in 20 characters." />
+              <Input placeholder="Describe the injustice in 40 characters." maxLength="40" />
             </Box>
           </Flex>
         </form>
