@@ -44,7 +44,7 @@ const CASES = gql`
 `
 
 export function CaseFeed(props) {
-  const { loading, error, data } = useQuery(CASES)
+  const { data } = useQuery(CASES)
 
   return (
     <CaseFeedContainer>

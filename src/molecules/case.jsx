@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/emotion'
 import CaseImage from '../assets/images/allyance__casefeedimage__placeholder.png'

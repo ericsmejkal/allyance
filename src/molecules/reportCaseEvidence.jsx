@@ -4,7 +4,7 @@ import { Box, Flex } from '@rebass/emotion'
 
 import { ReportCaseTitle } from '../atoms/title'
 import { H4 } from '../atoms/text'
-import { Input, LinkInput } from '../atoms/input'
+import { LinkInput } from '../atoms/input'
 import { AccentButton } from '../atoms/button'
 import Uploader from '../atoms/uploader'
 

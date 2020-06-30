@@ -3,7 +3,7 @@ import styled from '@emotion/styled'
 import { Box, Flex } from '@rebass/emotion'
 
 import { ReportCaseTitle } from '../atoms/title'
-import { Input, DropdownInput, TextAreaInput } from '../atoms/input'
+import { Input, TextAreaInput } from '../atoms/input'
 
 const ReportCaseContainer = styled.div`
   width: 100%;
