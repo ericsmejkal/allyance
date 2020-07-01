@@ -153,7 +153,7 @@ const Search = styled.input`
   outline: none;
 
   &::placeholder {
-    color: ${(props) => props.theme.colors.grey};
+    coflor: ${(props) => props.theme.colors.grey};
   }
 
   &:hover,
@@ -224,6 +224,8 @@ export function Input(props) {
         placeholder={props.placeholder}
         className={props.email ? 'input--email' : ''}
         maxLength={props.maxLength}
+        onChange={props.onChange}
+        value={props.value}
       />
     </>
   )

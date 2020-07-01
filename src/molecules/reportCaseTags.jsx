@@ -11,7 +11,7 @@ const ReportCaseContainer = styled.div`
   width: 100%;
 `
 
-const CASES = gql`
+const TAGS = gql`
   {
     tags {
       id
@@ -21,10 +21,17 @@ const CASES = gql`
 `
 
 export function ReportCaseTags(props) {
-  const { data } = useQuery(CASES)
+  const { data } = useQuery(TAGS)
   if (props.currentStep !== 5) {
     return null
   }
+  const { form, setForm } = props
+
+  const handleTagSelect = (tag) => {
+    console.log(tag)
+    setForm('tags', [...form.tags, tag])
+  }
+
   return (
     <ReportCaseContainer>
       <ReportCaseTitle
@@ -34,7 +41,16 @@ export function ReportCaseTags(props) {
       <form>
         {data && data.tags
           ? data.tags.map((tag, i) => {
-              return <Tag title={tag.content} tag={tag} key={i} variant="light" />
+              return (
+                <Tag
+                  title={tag.content}
+                  tag={tag}
+                  key={i}
+                  variant="light"
+                  onClick={() => handleTagSelect(tag)}
+                  disabled={form.tags.find((el) => el.id === tag.id)}
+                />
+              )
             })
           : null}
       </form>

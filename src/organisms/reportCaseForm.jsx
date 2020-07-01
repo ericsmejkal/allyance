@@ -76,6 +76,10 @@ class ReportCaseForm extends React.Component {
     super(props)
     this.state = {
       currentStep: 1, // Default is Step 1
+      incident: {},
+      victim: {},
+      perpetrator: {},
+      tags: [{ id: 35 }],
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -83,25 +87,16 @@ class ReportCaseForm extends React.Component {
     this._prev = this._prev.bind(this)
   }
 
-  handleChange(event) {
-    const { name, value } = event.target
+  handleChange(key, value) {
     this.setState({
-      [name]: value,
+      [key]: value,
     })
   }
 
-  // WIP - Fix later
-  // handleSubmit = (event) => {
-  //   let currentStep = this.state.currentStep
-  //   if (currentStep === 5) {
-  //     return (
-  //       <SubmitButton className="btn btn-secondary" type="button" onClick={this._prev}>
-  //         Submit
-  //       </SubmitButton>
-  //     )
-  //   }
-  //   return null
-  // }
+  handleSubmit = (e) => {
+    e.preventDefault()
+    console.log('submit')
+  }
 
   _next() {
     let currentStep = this.state.currentStep
@@ -144,31 +139,57 @@ class ReportCaseForm extends React.Component {
     return null
   }
 
+  get submitButton() {
+    let currentStep = this.state.currentStep
+    if (currentStep === 5) {
+      return (
+        <NextButton
+          className="btn btn-primary float-right"
+          type="button"
+          onClick={this.handleSubmit}
+        >
+          Submit
+        </NextButton>
+      )
+    }
+    return null
+  }
+
   render() {
     return (
       <SubContainer>
         <ReportCaseContainer>
-          <form onSubmit={this.handleSubmit}>
+          <form>
             <ReportCaseVictim
               currentStep={this.state.currentStep}
-              handleChange={this.handleChange}
+              form={this.state}
+              setForm={this.handleChange}
             />
             <ReportCasePerpetrator
               currentStep={this.state.currentStep}
-              handleChange={this.handleChange}
+              form={this.state}
+              setForm={this.handleChange}
             />
             <ReportCaseIncident
               currentStep={this.state.currentStep}
-              handleChange={this.handleChange}
+              form={this.state}
+              setForm={this.handleChange}
             />
             <ReportCaseEvidence
               currentStep={this.state.currentStep}
-              handleChange={this.handleChange}
+              form={this.state}
+              setForm={this.handleChange}
             />
-            <ReportCaseTags currentStep={this.state.currentStep} handleChange={this.handleChange} />
+            <ReportCaseTags
+              currentStep={this.state.currentStep}
+              handleChange={this.handleChange}
+              form={this.state}
+              setForm={this.handleChange}
+            />
             <ReportCaseButtons>
               {this.previousButton}
               {this.nextButton}
+              {this.submitButton}
             </ReportCaseButtons>
           </form>
         </ReportCaseContainer>

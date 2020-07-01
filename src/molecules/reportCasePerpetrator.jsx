@@ -27,6 +27,8 @@ class ReportCasePerpetrator extends React.Component {
     if (this.props.currentStep !== 2) {
       return null
     }
+
+    const { form, setForm } = this.props
     return (
       <ReportCaseContainer>
         <ReportCaseTitle
@@ -36,10 +38,23 @@ class ReportCasePerpetrator extends React.Component {
         <form>
           <Flex mt={3} ml={-2} pb={4} mr={-2} alignItems="flex-end">
             <Box width={1} pl={2} pr={2}>
-              <Input placeholder="Do you know their first name?" rowTitle="Add their name" />
+              <Input
+                placeholder="Do you know their first name?"
+                rowTitle="Add their name"
+                value={form.perpetrator.firstName}
+                onChange={(e) => {
+                  setForm('perpetrator', { ...form.perpetrator, firstName: e.target.value })
+                }}
+              />
             </Box>
             <Box width={1} mt={4} pl={2} pr={2}>
-              <Input placeholder="Do you know their last name?" />
+              <Input
+                placeholder="Do you know their last name?"
+                value={form.perpetrator.lastName}
+                onChange={(e) => {
+                  setForm('perpetrator', { ...form.perpetrator, lastName: e.target.value })
+                }}
+              />
             </Box>
           </Flex>
           <Flex mt={3} ml={-2} pb={3} mr={-2} alignItems="flex-end">
