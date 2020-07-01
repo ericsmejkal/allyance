@@ -126,10 +126,14 @@ const BaseTag = styled(BaseButton)`
 
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  &:disabled {
     color: ${(props) => props.theme.colors.white};
     background-color: transparent;
     border: 4px solid ${(props) => props.theme.colors.lightGrey};
+  }
+  &:disabled {
+    cursor: auto;
   }
 `
 
@@ -145,10 +149,14 @@ const BaseTagLight = styled(BaseButton)`
 
   &:hover,
   &:focus,
-  &:active {
+  &:active,
+  &:disabled {
     color: ${(props) => props.theme.colors.black};
     background-color: transparent;
     border: 4px solid ${(props) => props.theme.colors.lightGrey};
+  }
+  &:disabled {
+    cursor: auto;
   }
 `
 
@@ -213,11 +221,23 @@ export function Tag(props) {
   return (
     <>
       {props.variant === 'light' ? (
-        <BaseTagLight className="brand-button brand-button--tag" variant="secondary">
+        <BaseTagLight
+          className="brand-button brand-button--tag"
+          variant="secondary"
+          type="button"
+          onClick={props.onClick}
+          disabled={props.disabled}
+        >
           {props.title}
         </BaseTagLight>
       ) : (
-        <BaseTag className="brand-button brand-button--tag" variant="secondary">
+        <BaseTag
+          className="brand-button brand-button--tag"
+          variant="secondary"
+          type="button"
+          onClick={props.onClick}
+          disabled={props.disabled}
+        >
           {props.title}
         </BaseTag>
       )}

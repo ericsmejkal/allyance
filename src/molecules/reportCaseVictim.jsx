@@ -29,6 +29,8 @@ class ReportCaseVictim extends React.Component {
       return null
     }
 
+    const { form, setForm } = this.props
+
     return (
       <ReportCaseContainer>
         <ReportCaseTitle
@@ -38,10 +40,23 @@ class ReportCaseVictim extends React.Component {
         <form>
           <Flex mt={3} ml={-2} pb={4} mr={-2} alignItems="flex-end">
             <Box width={1} pl={2} pr={2}>
-              <Input placeholder="What is their first name?" rowTitle="Add their name" />
+              <Input
+                placeholder="What is their first name?"
+                rowTitle="Add their name"
+                value={form.victim.firstName}
+                onChange={(e) => {
+                  setForm('victim', { ...form.victim, firstName: e.target.value })
+                }}
+              />
             </Box>
             <Box width={1} mt={4} pl={2} pr={2}>
-              <Input placeholder="What is their last name?" />
+              <Input
+                placeholder="What is their last name?"
+                value={form.victim.lastName}
+                onChange={(e) => {
+                  setForm('victim', { ...form.victim, lastName: e.target.value })
+                }}
+              />
             </Box>
           </Flex>
           <Flex mt={3} ml={-2} pb={3} mr={-2} alignItems="flex-end">
