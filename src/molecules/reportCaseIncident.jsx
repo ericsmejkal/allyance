@@ -37,7 +37,7 @@ class ReportCaseIncident extends React.Component {
             <Box width={1} pl={2} pr={2}>
               <Input
                 placeholder="What was the date of the incident?"
-                rowTitle="Add any details your have"
+                rowTitle="Describe what happened"
                 type="date"
               />
             </Box>

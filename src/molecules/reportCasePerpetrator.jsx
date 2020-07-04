@@ -15,8 +15,21 @@ const raceOptions = [
   { value: 'asian', label: 'Asian' },
   { value: 'nativeAmerican', label: 'Native American / Indigenous' },
   { value: 'pacificIslander', label: 'Pacific Islander' },
+  { value: 'middleEastern', label: 'Middle Eastern' },
   { value: 'latinX', label: 'Latinx' },
   { value: 'white', label: 'White' },
+]
+
+const chargeOptions = [
+  { value: 'noCharge', label: 'No Charge' },
+  { value: 'firedFromJob', label: 'Fired' },
+  { value: 'onTrial', label: 'On Trial' },
+  { value: 'chargedExcessiveForce', label: 'Charged - Excessive Force' },
+  { value: 'chargedSexualAssault', label: 'Charged - Sexual Assault' },
+  { value: 'charged3rdMurder', label: 'Charged - 3rd Degree Murder' },
+  { value: 'charged2rdMurder', label: 'Charged - 2nd Degree Murder' },
+  { value: 'charged1rdMurder', label: 'Charged - 1st Degree Murder' },
+  { value: 'chargedOther', label: 'Charged - Other' },
 ]
 
 class ReportCasePerpetrator extends React.Component {
@@ -61,11 +74,15 @@ class ReportCasePerpetrator extends React.Component {
             <Box width={1} pl={2} pr={2}>
               <Input
                 placeholder="Did they have an identification number / badge?"
-                rowTitle="Add any details your have"
+                rowTitle="Add any details you have"
               />
             </Box>
             <Box width={1} mt={4} pl={2} pr={2} alignItems="flex-end">
-              <DropdownInput options={raceOptions} placeholder="What is their racial identity?" />
+              <DropdownInput
+                DropdownInput
+                options={chargeOptions}
+                placeholder="Does this person have any current charges?"
+              />
             </Box>
           </Flex>
           <Flex mt={1} ml={-2} pb={3} mr={-2}>
@@ -73,7 +90,7 @@ class ReportCasePerpetrator extends React.Component {
               <Uploader uploadType="images" uploadTitle="perpetrator" />
             </Box>
             <Box width={1} pl={2} pr={2}>
-              <Input placeholder="Describe what they did in 40 characters." maxLength="40" />
+              <DropdownInput options={raceOptions} placeholder="What is their racial identity?" />
             </Box>
           </Flex>
         </form>
