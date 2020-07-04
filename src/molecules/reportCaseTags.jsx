@@ -28,7 +28,6 @@ export function ReportCaseTags(props) {
   const { form, setForm } = props
 
   const handleTagSelect = (tag) => {
-    console.log(tag)
     setForm('tags', [...form.tags, tag])
   }
 
