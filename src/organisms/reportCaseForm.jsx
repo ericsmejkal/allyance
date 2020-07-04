@@ -7,6 +7,8 @@ import ReportCasePerpetrator from '../molecules/reportCasePerpetrator'
 import ReportCaseIncident from '../molecules/reportCaseIncident'
 import ReportCaseEvidence from '../molecules/reportCaseEvidence'
 import ReportCaseTags from '../molecules/reportCaseTags'
+import { gql } from 'apollo-boost'
+import { useMutation } from '@apollo/react-hooks'
 
 const ReportCaseContainer = styled.div`
   width: 100%;
@@ -70,6 +72,29 @@ const ReportCaseButtons = styled.div`
   margin-top: 40px;
   justify-content: space-between;
 `
+// $longDescription: String
+//     victim: {
+//       firstName: String
+//       lastName: String
+//     }
+//     perpetrator: {
+//       firstName: String
+//       lastName: String
+//     }
+//     tags: [{
+//       id
+//       content
+//     }]
+const CREATE_INCIDENT = gql`
+  mutation createIncident($shortDescription: String) {
+    createIncident(shortDescription: $shortDescription) {
+      incident {
+        id
+        shortDescription
+      }
+    }
+  }
+`
 
 class ReportCaseForm extends React.Component {
   constructor(props) {
@@ -91,11 +116,6 @@ class ReportCaseForm extends React.Component {
     this.setState({
       [key]: value,
     })
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault()
-    console.log('submit')
   }
 
   _next() {
@@ -139,15 +159,11 @@ class ReportCaseForm extends React.Component {
     return null
   }
 
-  get submitButton() {
+  submitButton(handleSubmit) {
     let currentStep = this.state.currentStep
     if (currentStep === 5) {
       return (
-        <NextButton
-          className="btn btn-primary float-right"
-          type="button"
-          onClick={this.handleSubmit}
-        >
+        <NextButton className="btn btn-primary float-right" type="button" onClick={handleSubmit}>
           Submit
         </NextButton>
       )
@@ -156,6 +172,13 @@ class ReportCaseForm extends React.Component {
   }
 
   render() {
+    const [createIncident, { data }] = useMutation(CREATE_INCIDENT)
+
+    const handleSubmit = (e) => {
+      e.preventDefault()
+
+      createIncident({ variables: { shortDescription: 'this is my description' } })
+    }
     return (
       <SubContainer>
         <ReportCaseContainer>
@@ -189,7 +212,7 @@ class ReportCaseForm extends React.Component {
             <ReportCaseButtons>
               {this.previousButton}
               {this.nextButton}
-              {this.submitButton}
+              {this.submitButton(handleSubmit)}
             </ReportCaseButtons>
           </form>
         </ReportCaseContainer>

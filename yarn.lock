@@ -9224,6 +9224,11 @@ react-transition-group@^4.3.0:
     loose-envify "^1.4.0"
     prop-types "^15.6.2"
 
+react-universal-hooks@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/react-universal-hooks/-/react-universal-hooks-0.5.0.tgz#47442b62cd84176dbf8942f7c4623aba03c7b104"
+  integrity sha512-6u+nnyPO8v4tiNtrcCWNdDnbRjiyBEhrxLxpsNBsdcLL2Y7bEEArEQn9oZ/34VpY1KM40Ju28WouSSpwUstH5w==
+
 react@^16.8.6:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
