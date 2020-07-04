@@ -9,6 +9,7 @@ import { gql } from 'apollo-boost'
 
 const ReportCaseContainer = styled.div`
   width: 100%;
+  padding-bottom: 40px;
 `
 
 const TAGS = gql`

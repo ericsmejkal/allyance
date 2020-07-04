@@ -189,7 +189,7 @@ const dropdownStyles = {
     alignItems: 'center',
     justifyContent: 'space-between',
     height: '48px',
-    marginTop: '8px',
+    marginTop: '0px',
     fontSize: '16px',
     lineHeight: '1.5',
   }),
