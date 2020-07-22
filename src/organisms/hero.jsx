@@ -57,7 +57,7 @@ const SmallHeroContainer = styled.main`
 
   H1 {
     color: ${(props) => props.theme.colors.white};
-    max-width: 448px;
+    max-width: 579px;
     line-height: 48px;
     margin-top: 32px;
 
